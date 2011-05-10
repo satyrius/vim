@@ -269,10 +269,8 @@ vnoremap > >gv
 " Map F4 to re-build tags file
 nmap <silent> <F4> :!ctags -f ./tags -R --totals=yes --tag-relative=yes<CR>
 
-" Nerd tree hotkeys
-if exists('loaded_nerd_tree')
-	nmap <silent> <F7> :NERDTreeToggle<CR>
-endif
+" Nerd tree toggle
+nmap <silent> <F7> :NERDTreeToggle<CR>
 
 " }}}
 
