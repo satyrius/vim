@@ -4,3 +4,6 @@
 [submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
+[submodule ".vim/bundle/phpcomplete"]
+	path = .vim/bundle/phpcomplete
+	url = git://github.com/shawncplus/phpcomplete.vim.git

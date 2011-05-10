@@ -153,7 +153,7 @@ autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType php setlocal omnifunc=phpcomplete#Complete
+autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " }}}
