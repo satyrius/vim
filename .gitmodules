@@ -7,3 +7,6 @@
 [submodule ".vim/bundle/phpcomplete"]
 	path = .vim/bundle/phpcomplete
 	url = git://github.com/shawncplus/phpcomplete.vim.git
+[submodule ".vim/bundle/pythoncomplete"]
+	path = .vim/bundle/pythoncomplete
+	url = git://github.com/vim-scripts/pythoncomplete.git
