@@ -248,11 +248,6 @@ endif
 " Set the <Leader> for combo commands
 let mapleader = ","
 
-" Save, Exit and Save & Exit operations
-map ,s :w<CR>
-map ,q :q!<CR>
-map ,w :x<CR>
-
 " Switch between windows faster
 map <C-J> <C-W>j
 map <C-K> <C-W>k
