@@ -265,7 +265,7 @@ vnoremap > >gv
 nmap <silent> <F4> :!ctags -f ./tags -R --totals=yes --tag-relative=yes<CR>
 
 " Nerd tree toggle
-nmap <silent> <F7> :NERDTreeToggle<CR>
+nmap <silent> <Leader>r :NERDTreeToggle<CR>
 
 " Buffer explorer open
 nmap <silent> <Leader>e :BufExplorer<CR>
