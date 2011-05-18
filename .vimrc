@@ -280,5 +280,8 @@ nmap <silent> <Leader>r :NERDTreeToggle<CR>
 " Buffer explorer open
 nmap <silent> <Leader>e :BufExplorer<CR>
 
+" Open tag list hotkey
+nnoremap <silent> <Leader>l :TlistOpen<CR>
+
 " }}}
 
