@@ -141,6 +141,16 @@ autocmd BufRead *.py setlocal smartindent cinwords=if,elif,else,for,while,try,ex
 " }}}
 
 "
+" HIGHLITING
+"
+" {{{
+
+hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+set cursorline
+
+" }}}
+
+"
 " OMNI COMPLETION
 "
 " {{{
