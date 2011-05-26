@@ -272,7 +272,7 @@ vnoremap < <gv
 vnoremap > >gv
 
 " Map F4 to re-build tags file
-nmap <silent> <F4> :!ctags -f ./tags -R --totals=yes --tag-relative=yes<CR>
+nmap <silent> <F4> :!ctags -f ./tags -R --totals=yes --tag-relative=yes --python-kinds=-iv<CR>
 
 " Nerd tree toggle
 nmap <silent> <Leader>r :NERDTreeToggle<CR>
