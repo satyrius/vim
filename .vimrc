@@ -133,7 +133,7 @@ set shiftwidth=4
 set tabstop=4
 
 " Automatically insert EOL for long strings
-set wrapmargin=79
+set textwidth=79
 
 " Remove trailing whitespaces before save
 autocmd BufWritePre * :%s/\s\+$//e
