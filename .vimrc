@@ -18,9 +18,6 @@ filetype plugin indent on
 "
 " {{{
 
-" Turn syntax highlighting on
-syntax on
-
 " Write contents of the file, if it has been modified, on buffer exit
 set autowrite
 
@@ -144,12 +141,13 @@ autocmd BufRead *.py setlocal smartindent cinwords=if,elif,else,for,while,try,ex
 " }}}
 
 "
-" HIGHLITING
+" THEME AND HIGHLITING
 "
 " {{{
 
-hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-set cursorline
+syntax enable
+set background=dark
+colorscheme solarized
 
 " }}}
 
@@ -243,7 +241,6 @@ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")|execute("normal 
 " {{{
 
 if has("gui_running")
-    colorscheme zenburn
     "set guioptions-=T
     "set guioptions-=L
     "set guioptions-=r
