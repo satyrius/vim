@@ -1,24 +1,24 @@
-[submodule ".vim/bundle/command-t"]
-	path = .vim/bundle/command-t
+[submodule "bundle/command-t"]
+	path = bundle/command-t
 	url = git://git.wincent.com/command-t.git
-[submodule ".vim/bundle/nerdtree"]
-	path = .vim/bundle/nerdtree
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
-[submodule ".vim/bundle/phpcomplete"]
-	path = .vim/bundle/phpcomplete
+[submodule "bundle/phpcomplete"]
+	path = bundle/phpcomplete
 	url = git://github.com/shawncplus/phpcomplete.vim.git
-[submodule ".vim/bundle/pythoncomplete"]
-	path = .vim/bundle/pythoncomplete
+[submodule "bundle/pythoncomplete"]
+	path = bundle/pythoncomplete
 	url = git://github.com/vim-scripts/pythoncomplete.git
-[submodule ".vim/bundle/bufexplorer"]
-	path = .vim/bundle/bufexplorer
+[submodule "bundle/bufexplorer"]
+	path = bundle/bufexplorer
 	url = git://github.com/vim-scripts/bufexplorer.zip.git
-[submodule ".vim/bundle/snipmate"]
-	path = .vim/bundle/snipmate
+[submodule "bundle/snipmate"]
+	path = bundle/snipmate
 	url = git://github.com/msanders/snipmate.vim.git
-[submodule ".vim/bundle/taglist"]
-	path = .vim/bundle/taglist
+[submodule "bundle/taglist"]
+	path = bundle/taglist
 	url = git://github.com/vim-scripts/taglist.vim.git
-[submodule ".vim/bundle/colors-solarized"]
-	path = .vim/bundle/colors-solarized
+[submodule "bundle/colors-solarized"]
+	path = bundle/colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
