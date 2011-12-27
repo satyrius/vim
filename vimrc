@@ -18,8 +18,8 @@ filetype plugin indent on
 "
 " {{{
 
-" Write contents of the file, if it has been modified, on buffer exit
-set autowrite
+" Save file content whenere we leave current buffer or close window
+set autowriteall
 
 " Allow backspacing over everything
 set backspace=indent,eol,start
