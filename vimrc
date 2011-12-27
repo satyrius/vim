@@ -25,7 +25,7 @@ set autowriteall
 set backspace=indent,eol,start
 
 " Use UTF-8 as the default buffer encoding
-set enc=utf-8
+set encoding=utf-8
 
 " File encogings list
 set fileencodings=utf-8,windows-1251,iso-8859-15,koi8-r
