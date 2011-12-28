@@ -148,7 +148,7 @@ autocmd BufRead *.py setlocal smartindent cinwords=if,elif,else,for,while,try,ex
 syntax enable
 set t_Co=256
 set background=dark
-colorscheme monokai
+colorscheme railscasts
 
 " }}}
 

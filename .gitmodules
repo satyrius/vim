@@ -22,9 +22,6 @@
 [submodule "bundle/colors-solarized"]
 	path = bundle/colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule "bundle/railscasts"]
-	path = bundle/railscasts
-	url = git://github.com/vim-scripts/Railscasts-Theme-GUIand256color.git
 [submodule "bundle/zenburn"]
 	path = bundle/zenburn
 	url = git://github.com/vim-scripts/Zenburn.git
@@ -34,3 +31,6 @@
 [submodule "bundle/monokai"]
 	path = bundle/monokai
 	url = git://github.com/rickharris/vim-monokai.git
+[submodule "bundle/colors-railscasts"]
+	path = bundle/colors-railscasts
+	url = git://github.com/rickharris/vim-railscasts.git
