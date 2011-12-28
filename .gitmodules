@@ -31,3 +31,6 @@
 [submodule "bundle/rdark"]
 	path = bundle/rdark
 	url = https://github.com/vim-scripts/rdark.git
+[submodule "bundle/monokai"]
+	path = bundle/monokai
+	url = git://github.com/rickharris/vim-monokai.git
