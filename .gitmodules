@@ -28,9 +28,9 @@
 [submodule "bundle/rdark"]
 	path = bundle/rdark
 	url = https://github.com/vim-scripts/rdark.git
-[submodule "bundle/monokai"]
-	path = bundle/monokai
-	url = git://github.com/rickharris/vim-monokai.git
 [submodule "bundle/colors-railscasts"]
 	path = bundle/colors-railscasts
 	url = git://github.com/rickharris/vim-railscasts.git
+[submodule "bundle/colors-monokai"]
+	path = bundle/colors-monokai
+	url = git://github.com/rickharris/vim-monokai.git
