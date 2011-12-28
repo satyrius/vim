@@ -21,17 +21,11 @@ filetype plugin indent on
 " Save file content whenere we leave current buffer or close window
 set autowriteall
 
-" Allow backspacing over everything
-set backspace=indent,eol,start
-
 " Use UTF-8 as the default buffer encoding
 set encoding=utf-8
 
 " File encogings list
 set fileencodings=utf-8,windows-1251,iso-8859-15,koi8-r
-
-" Use markers to specify folds
-set foldmethod=marker
 
 " Remember up to 100 'colon' commmands and search patterns
 set history=100
@@ -39,14 +33,33 @@ set history=100
 " Fix russian keys input
 set langmap=йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фa,ыs,вd,аf,пg,рh,оj,лk,дl,ж\\;,э',яz,чx,сc,мv,иb,тn,ьm,б\\,,ю.,ё`,ЙQ,ЦW,УE,КR,ЕT,НY,ГU,ШI,ЩO,ЗP,Х{,Ъ},ФA,ЫS,ВD,АF,ПG,РH,ОJ,ЛK,ДL,Ж:,Э\\",ЯZ,ЧX,СC,МV,ИB,ТN,ЬM,Б<,Ю>,Ё~
 
+" When a bracket is inserted, briefly jump to a matching one
+set showmatch
+
+" Set the tags files to be the following
+set tags=./tags,tags
+
+" Write swap file to disk after every 50 characters
+set updatecount=50
+
+" }}}
+
+"
+" INTERFACE (LINES, FOLDING, RULER, etc.)
+"
+" {{{
+
+" Use markers to specify folds
+set foldmethod=marker
+
 " Always show status line, even for one window
 set laststatus=2
 
+" Do not wrap long lines, because it is ugly
+set nowrap
+
 " Show line numbers
 set number
-
-" Use F10 to toggle 'paste' mode
-set pastetoggle=<F10>
 
 " Show line, column number, and relative position within a file in the status line
 set ruler
@@ -54,17 +67,11 @@ set ruler
 " Scroll when cursor gets within 3 characters of top/bottom edge
 set scrolloff=3
 
-" When a bracket is inserted, briefly jump to a matching one
-set showmatch
-
-" Set the tags files to be the following
-set tags=./tags,tags
-
 " Show buffer name in the window's title
 set title
 
-" Write swap file to disk after every 50 characters
-set updatecount=50
+" Show PEP8 line length border
+autocmd FileType python setlocal colorcolumn=80
 
 " }}}
 
@@ -110,15 +117,21 @@ set wildmode=list:longest,full
 " }}}
 
 "
-" FORMATTING
+" FORMATTING AND EDITING
 "
 " {{{
+
+" Allow backspacing over everything
+set backspace=indent,eol,start
 
 " C-style indention by default
 set cindent
 
 " All tabs will be replaced by spaces
 set expandtab
+
+" Use F10 to toggle 'paste' mode
+set pastetoggle=<F10>
 
 " Round indent to multiple of 'shiftwidth' for > and < commands
 set shiftround
@@ -129,14 +142,11 @@ set shiftwidth=4
 " Use 4 spaces for <Tab> and :retab
 set tabstop=4
 
-" Automatically insert EOL for long strings
-set textwidth=79
-
 " Remove trailing whitespaces before save
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Change indention for python scripts
-autocmd BufRead *.py setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+autocmd FileType python setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 
 " }}}
 
@@ -146,6 +156,7 @@ autocmd BufRead *.py setlocal smartindent cinwords=if,elif,else,for,while,try,ex
 " {{{
 
 syntax enable
+let python_highlight_all=1
 set t_Co=256
 set background=dark
 colorscheme railscasts
@@ -233,21 +244,6 @@ endif
 
 " Go back to the position the cursor was on the last time this file was edited
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")|execute("normal `\"")|endif
-
-" }}}
-
-"
-" GUI
-"
-" {{{
-
-if has("gui_running")
-    "set guioptions-=T
-    "set guioptions-=L
-    "set guioptions-=r
-    set guioptions=ac
-    set lines=57
-endif
 
 " }}}
 
