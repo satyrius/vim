@@ -211,46 +211,6 @@ nmap  <Space> :set invhls<cr>:set hls?<cr>
 " }}}
 
 "
-" A FEW TRICS BY ANDREY ZMIEVSKI
-"
-" https://github.com/andreiz/vim-settings
-"
-" {{{
-
-" use CTRL-F for omni completion
-imap <C-F> 
-
-" map ,f to display all lines with keyword under cursor and ask which one to
-" jump to
-nmap ,f [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
-
-" open filename under cursor in a new window (use current file's working
-" directory)
-nmap gf :new %:p:h/<cfile><CR>
-
-" map <Alt-p> and <Alt-P> to paste below/above and reformat
-nnoremap <Esc>P  P'[v']=
-nnoremap <Esc>p  p'[v']=
-
-" Set up cscope options
-if has("cscope")
-	set csprg=cscope
-	set csto=0
-	set cst
-	set nocsverb
-	cs add cscope.out
-	set csverb
-	map <C-_> :cstag <C-R>=expand("<cword>")<CR><CR>
-	map g<C-]> :cs find 3 <C-R>=expand("<cword>")<CR><CR>
-	map g<C-\> :cs find 0 <C-R>=expand("<cword>")<CR><CR>
-endif
-
-" Go back to the position the cursor was on the last time this file was edited
-au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")|execute("normal `\"")|endif
-
-" }}}
-
-"
 " MAPPINGS
 "
 " {{{
