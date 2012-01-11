@@ -139,8 +139,8 @@ set cindent
 " All tabs will be replaced by spaces
 set expandtab
 
-" Use F10 to toggle 'paste' mode
-set pastetoggle=<F10>
+" I don't want surprises when I paste anything
+set paste
 
 " Round indent to multiple of 'shiftwidth' for > and < commands
 set shiftround
