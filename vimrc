@@ -139,9 +139,6 @@ set autoindent
 " All tabs will be replaced by spaces
 set expandtab
 
-" I don't want surprises when I paste anything
-set paste
-
 " Round indent to multiple of 'shiftwidth' for > and < commands
 set shiftround
 
