@@ -28,3 +28,6 @@
 [submodule "bundle/colors-monokai"]
 	path = bundle/colors-monokai
 	url = git://github.com/rickharris/vim-monokai.git
+[submodule "bundle/python-indent"]
+	path = bundle/python-indent
+	url = git://github.com/gg/python.vim.git

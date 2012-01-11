@@ -133,8 +133,8 @@ set wildmode=list:longest,full
 " Allow backspacing over everything
 set backspace=indent,eol,start
 
-" C-style indention by default
-set cindent
+" Use autoindention
+set autoindent
 
 " All tabs will be replaced by spaces
 set expandtab
@@ -153,9 +153,6 @@ set tabstop=4
 
 " Remove trailing whitespaces before save
 autocmd BufWritePre * :%s/\s\+$//e
-
-" Change indention for python scripts
-autocmd FileType python setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 
 " }}}
 
