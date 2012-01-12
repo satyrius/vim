@@ -31,3 +31,6 @@
 [submodule "bundle/python-indent"]
 	path = bundle/python-indent
 	url = git://github.com/gg/python.vim.git
+[submodule "bundle/python"]
+	path = bundle/python
+	url = git://github.com/satyrius/python.vim.git
