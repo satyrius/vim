@@ -217,7 +217,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 " }}}
 
 "
-" PLUGINS MAPPINGS
+" PLUGINS
 "
 " {{{
 
@@ -229,7 +229,9 @@ nnoremap <silent> <Leader>l :TlistOpen<CR>
 " Nerd tree toggle
 nmap <silent> <Leader>r :NERDTreeToggle<CR>
 
-" Buffer explorer open
+" Buffer Explorer
+let g:bufExplorerShowRelativePath=1
+let g:bufExplorerSortBy='name'
 nmap <silent> <Leader>e :BufExplorer<CR>
 
 " }}}
