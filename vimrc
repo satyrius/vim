@@ -13,8 +13,14 @@ call pathogen#helptags()
 filetype plugin indent on
 " }}}
 
+" Fix russian keys input
+set langmap=йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фa,ыs,вd,аf,пg,рh,оj,лk,дl,ж\\;,э',яz,чx,сc,мv,иb,тn,ьm,б\\,,ю.,ё`,ЙQ,ЦW,УE,КR,ЕT,НY,ГU,ШI,ЩO,ЗP,Х{,Ъ},ФA,ЫS,ВD,АF,ПG,РH,ОJ,ЛK,ДL,Ж:,Э\\",ЯZ,ЧX,СC,МV,ИB,ТN,ЬM,Б<,Ю>,Ё~
+
+" Set the <Leader> for combo commands
+let mapleader = ","
+
 "
-" COMMON SETTINGS
+" HISTORY
 "
 " {{{
 
@@ -29,15 +35,6 @@ set history=100
 " %    - remember the buffer list (if vim started without a file arg)
 " n    - set name of viminfo file
 set viminfo='20,\"50,:20,%,n~/.viminfo
-
-" Fix russian keys input
-set langmap=йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фa,ыs,вd,аf,пg,рh,оj,лk,дl,ж\\;,э',яz,чx,сc,мv,иb,тn,ьm,б\\,,ю.,ё`,ЙQ,ЦW,УE,КR,ЕT,НY,ГU,ШI,ЩO,ЗP,Х{,Ъ},ФA,ЫS,ВD,АF,ПG,РH,ОJ,ЛK,ДL,Ж:,Э\\",ЯZ,ЧX,СC,МV,ИB,ТN,ЬM,Б<,Ю>,Ё~
-
-" Set the tags files to be the following
-set tags=./tags,tags
-
-" Set the <Leader> for combo commands
-let mapleader = ","
 
 " }}}
 
@@ -224,16 +221,15 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 "
 " {{{
 
-" Map F4 to re-build tags file
+" Set the tags files to be the following and F4 to re-build tags file
+set tags=./tags,tags
 nmap <silent> <F4> :!ctags -f ./tags -R --totals=yes --tag-relative=yes --python-kinds=-iv<CR>
+nnoremap <silent> <Leader>l :TlistOpen<CR>
 
 " Nerd tree toggle
 nmap <silent> <Leader>r :NERDTreeToggle<CR>
 
 " Buffer explorer open
 nmap <silent> <Leader>e :BufExplorer<CR>
-
-" Open tag list hotkey
-nnoremap <silent> <Leader>l :TlistOpen<CR>
 
 " }}}
