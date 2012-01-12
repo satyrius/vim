@@ -1,4 +1,4 @@
-My VIM config I use for Python and PHP (depricated) development
+My VIM config I use for Python development
 
 To install just enter next commands:
 
