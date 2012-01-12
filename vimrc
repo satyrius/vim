@@ -33,7 +33,7 @@ set encoding=utf-8
 " File encogings list
 set fileencodings=utf-8,windows-1251,iso-8859-15,koi8-r
 
-" Why is this not a default
+" Mark abandoned buffers as hidden instead of unload them
 set hidden
 
 " Write swap file to disk after every 50 characters
@@ -45,9 +45,12 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "
 " }}}
 
 "
-" INTERFACE (LINES, FOLDING, RULER, WINDOWS etc.)
+" INTERFACE
 "
 " {{{
+
+" I want to see where I am
+set cursorline
 
 " Use markers to specify folds
 set foldmethod=marker
@@ -67,6 +70,9 @@ set ruler
 " Scroll when cursor gets within 3 characters of top/bottom edge
 set scrolloff=3
 
+" Show (partial) command in the last line of the screen
+set showcmd
+
 " When a bracket is inserted, briefly jump to a matching one
 set showmatch
 
@@ -75,6 +81,9 @@ set showmode
 
 " Show buffer name in the window's title
 set title
+
+" Indicate a fast terminal connection
+set ttyfast
 
 " Show PEP8 line length border
 autocmd FileType python setlocal colorcolumn=80
@@ -88,9 +97,25 @@ map <C-L> <C-W>l
 " }}}
 
 "
-" SEARCH OPTIONS
+" THEME AND HIGHLITING
 "
 " {{{
+
+syntax enable
+let python_highlight_all=1
+set t_Co=256
+set background=dark
+colorscheme railscasts
+
+" }}}
+
+"
+" SEARCH AND REPLACE
+"
+" {{{
+
+" All matches in a line are substituted instead of one
+set gdefault
 
 " Highlight search results
 set hlsearch
@@ -170,6 +195,9 @@ set shiftround
 " Use 4 spaces for (auto)indent
 set shiftwidth=4
 
+" Use 4 spaces for inserting <Tab> or using <BS>
+set softtabstop=4
+
 " Use 4 spaces for <Tab> and :retab
 set tabstop=4
 
@@ -183,20 +211,7 @@ vnoremap > >gv
 " }}}
 
 "
-" THEME AND HIGHLITING
-"
-" {{{
-
-syntax enable
-let python_highlight_all=1
-set t_Co=256
-set background=dark
-colorscheme railscasts
-
-" }}}
-
-"
-" OMNI COMPLETION
+" COMPLETION
 "
 " {{{
 
