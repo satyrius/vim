@@ -18,18 +18,6 @@ filetype plugin indent on
 "
 " {{{
 
-" Save file content whenere we leave current buffer or close window
-set autowriteall
-
-" Use UTF-8 as the default buffer encoding
-set encoding=utf-8
-
-" File encogings list
-set fileencodings=utf-8,windows-1251,iso-8859-15,koi8-r
-
-" Why is this not a default
-set hidden
-
 " Remember up to 100 'colon' commmands and search patterns
 set history=100
 
@@ -48,11 +36,33 @@ set langmap=йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фa,ыs,вd,аf,пg,
 " Set the tags files to be the following
 set tags=./tags,tags
 
+" Set the <Leader> for combo commands
+let mapleader = ","
+
+" }}}
+
+"
+" BUFFERS AND FILES
+"
+" {{{
+
+" Save file content whenere we leave current buffer or close window
+set autowriteall
+
+" Use UTF-8 as the default buffer encoding
+set encoding=utf-8
+
+" File encogings list
+set fileencodings=utf-8,windows-1251,iso-8859-15,koi8-r
+
+" Why is this not a default
+set hidden
+
 " Write swap file to disk after every 50 characters
 set updatecount=50
 
-" Set the <Leader> for combo commands
-let mapleader = ","
+" Jump to the last known position in a file just after opening it, if the '" mark is set
+autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g`\"" | endif
 
 " }}}
 
