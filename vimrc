@@ -232,4 +232,7 @@ let g:bufExplorerShowRelativePath=1
 let g:bufExplorerSortBy='name'
 nmap <silent> <Leader>e :BufExplorer<CR>
 
+" Rope
+nmap <silent> <Leader>g :call RopeGotoDefinition()<CR>
+
 " }}}

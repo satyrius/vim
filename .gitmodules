@@ -31,3 +31,6 @@
 [submodule "bundle/python"]
 	path = bundle/python
 	url = git://github.com/satyrius/python.vim.git
+[submodule "bundle/rope-vim"]
+	path = bundle/rope-vim
+	url = https://github.com/timo/rope-vim.git
