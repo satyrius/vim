@@ -236,3 +236,21 @@ nmap <silent> <Leader>e :BufExplorer<CR>
 nmap <silent> <Leader>g :call RopeGotoDefinition()<CR>
 
 " }}}
+
+"
+" VIRTUALENV
+"
+" {{{
+
+if has('python')
+    python << EOF
+import os, sys
+ve_dir = os.environ.get('VIRTUAL_ENV')
+if ve_dir:
+    ve_dir in sys.path or sys.path.insert(0, ve_dir)
+    activate_this = os.path.join(os.path.join(ve_dir, 'bin'), 'activate_this.py')
+    execfile(activate_this, dict(__file__=activate_this))
+EOF
+endif
+
+" }}}
