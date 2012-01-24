@@ -254,3 +254,12 @@ EOF
 endif
 
 " }}}
+
+"
+" ABBREVIATIONS
+"
+" {{{
+
+iab pyutf # -*- coding: utf-8 -*-<esc>
+
+" }}}
