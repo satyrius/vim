@@ -34,3 +34,6 @@
 [submodule "bundle/rope-vim"]
 	path = bundle/rope-vim
 	url = https://github.com/timo/rope-vim.git
+[submodule "bundle/scratch"]
+	path = bundle/scratch
+	url = git://github.com/duff/vim-scratch.git
