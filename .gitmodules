@@ -37,3 +37,6 @@
 [submodule "bundle/scratch"]
 	path = bundle/scratch
 	url = git://github.com/duff/vim-scratch.git
+[submodule "bundle/fugitive"]
+	path = bundle/fugitive
+	url = git://github.com/tpope/vim-fugitive.git
