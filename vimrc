@@ -238,6 +238,9 @@ nmap <silent> <Leader>g :call RopeGotoDefinition()<CR>
 " PyFlakes
 autocmd BufWritePost *.py call Pyflakes()
 
+" AutoComplPop
+let g:acp_ignorecaseOption = 1
+
 " }}}
 
 "

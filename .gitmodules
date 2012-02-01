@@ -43,3 +43,6 @@
 [submodule "bundle/pyflakes"]
 	path = bundle/pyflakes
 	url = git://github.com/nvie/vim-pyflakes.git
+[submodule "bundle/autocomplpop"]
+	path = bundle/autocomplpop
+	url = git://github.com/vim-scripts/AutoComplPop.git
