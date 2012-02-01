@@ -234,6 +234,7 @@ nmap <silent> <Leader>e :BufExplorer<CR>
 
 " Rope
 nmap <silent> <Leader>g :call RopeGotoDefinition()<CR>
+nmap <silent> <Leader>i :call RopeAutoImport()<CR>
 
 " PyFlakes
 autocmd BufWritePost *.py call Pyflakes()
