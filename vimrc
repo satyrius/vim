@@ -64,20 +64,14 @@ set nowrap
 " Show line numbers
 set number
 
-" Show line, column number, and relative position within a file in the status line
-set ruler
-
 " Scroll when cursor gets within 3 characters of top/bottom edge
 set scrolloff=3
-
-" Show (partial) command in the last line of the screen
-set showcmd
 
 " When a bracket is inserted, briefly jump to a matching one
 set showmatch
 
-" At least let yourself know what mode you're in
-set showmode
+" Do not show mode, Powerline do it
+set noshowmode
 
 " Show buffer name in the window's title
 set title
