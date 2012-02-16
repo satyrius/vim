@@ -242,6 +242,9 @@ autocmd BufWritePost *.py call Pyflakes()
 " AutoComplPop
 let g:acp_ignorecaseOption = 1
 
+" CtrlP
+let g:ctrlp_match_window_reversed = 0
+
 " }}}
 
 "
