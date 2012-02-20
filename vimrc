@@ -49,6 +49,10 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "
 "
 " {{{
 
+" Operations such as yy, D, and P work with the system clipboard.
+" http://vim.wikia.com/wiki/Mac_OS_X_clipboard_sharing#Comments
+set clipboard=unnamed
+
 " I want to see where I am
 set cursorline
 
