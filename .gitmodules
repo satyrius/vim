@@ -4,9 +4,6 @@
 [submodule "bundle/pythoncomplete"]
 	path = bundle/pythoncomplete
 	url = git://github.com/vim-scripts/pythoncomplete.git
-[submodule "bundle/command-t"]
-	path = bundle/command-t
-	url = git://github.com/wincent/Command-T.git
 [submodule "bundle/bufexplorer"]
 	path = bundle/bufexplorer
 	url = git://github.com/vim-scripts/bufexplorer.zip.git
