@@ -3,3 +3,10 @@ snippet #-
 
 snippet ipdb
 	import ipdb; ipdb.set_trace()
+
+snippet cmd
+	class ${1:Command}(${2:BaseCommand}):
+		args = '<${3:foo bar}>'
+		help = '${4:Do somethind new and awesome}'
+		def handle(self, *args, **options):
+			${5:pass}
