@@ -260,13 +260,3 @@ EOF
 endif
 
 " }}}
-
-"
-" ABBREVIATIONS
-"
-" {{{
-
-iab pyutf # -*- coding: utf-8 -*-<esc>
-iab ipdb import ipdb; ipdb.set_trace()<esc>
-
-" }}}
