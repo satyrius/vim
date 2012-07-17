@@ -219,9 +219,12 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 " PLUGINS
 "
 " {{{
+nmap <silent> <Leader>r :make<CR>
+
+autocmd FileType sql set makeprg=./manage.py\ psql\ %
 
 " Nerd tree toggle
-nmap <silent> <Leader>r :NERDTreeToggle<CR>
+nmap <silent> <Leader>t :NERDTreeToggle<CR>
 
 " Buffer Explorer
 let g:bufExplorerShowRelativePath=1
