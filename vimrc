@@ -147,7 +147,7 @@ nmap  <Space> :set invhls<cr>:set hls?<cr>
 " {{{
 
 " Ignore certain types of files on completion
-set wildignore+=*.swp,*.pyc,.git
+set wildignore+=*.swp,*.pyc,.git,.ropeproject,_generated_media*
 
 " Use menu to show command-line completion (in 'full' case)
 set wildmenu
