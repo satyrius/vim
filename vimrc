@@ -19,6 +19,10 @@ set langmap=йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фa,ыs,вd,аf,пg,
 " Set the <Leader> for combo commands
 let mapleader = ","
 
+" Common commads in upper case
+:command W w
+:command Q q
+
 "
 " BUFFERS AND FILES
 "
