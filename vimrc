@@ -225,7 +225,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 " {{{
 nmap <silent> <Leader>r :make<CR>
 
-autocmd FileType sql set makeprg=./manage.py\ psql\ %
+autocmd FileType sql set makeprg=cat\ %\\\|./manage.py\ dbshell
 
 " Nerd tree toggle
 nmap <silent> <Leader>t :NERDTreeToggle<CR>
