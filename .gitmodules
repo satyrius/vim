@@ -49,3 +49,6 @@
 [submodule "bundle/ack"]
 	path = bundle/ack
 	url = https://github.com/mileszs/ack.vim.git
+[submodule "bundle/coffee"]
+	path = bundle/coffee
+	url = git://github.com/kchmck/vim-coffee-script.git
