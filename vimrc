@@ -81,7 +81,7 @@ set scrolloff=3
 " When a bracket is inserted, briefly jump to a matching one
 set showmatch
 
-" Do not show mode, Powerline do it
+" Do not show mode, Powerline does it
 set noshowmode
 
 " Show buffer name in the window's title
@@ -89,9 +89,6 @@ set title
 
 " Indicate a fast terminal connection
 set ttyfast
-
-" Show PEP8 line length border
-autocmd FileType python setlocal colorcolumn=80
 
 " Switch between windows faster
 map <C-J> <C-W>j
@@ -169,11 +166,11 @@ set wildmode=list:longest,full
 "
 " {{{
 
-" Allow backspacing over everything
-set backspace=indent,eol,start
-
 " Use autoindention
 set autoindent
+
+" Allow backspacing over everything
+set backspace=indent,eol,start
 
 " All tabs will be replaced by spaces
 set expandtab
@@ -191,6 +188,7 @@ set softtabstop=4
 set tabstop=4
 
 " Remove trailing whitespaces before save
+" Someone says its dangerous. Nah! Screw you!
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Visual shifting (does not exit Visual mode)
@@ -214,7 +212,6 @@ set omnifunc=syntaxcomplete#Complete
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " }}}
@@ -223,9 +220,8 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 " PLUGINS
 "
 " {{{
+"
 nmap <silent> <Leader>r :make<CR>
-
-autocmd FileType sql set makeprg=cat\ %\\\|./manage.py\ dbshell
 
 " Nerd tree toggle
 nmap <silent> <Leader>t :NERDTreeToggle<CR>
@@ -234,13 +230,6 @@ nmap <silent> <Leader>t :NERDTreeToggle<CR>
 let g:bufExplorerShowRelativePath=1
 let g:bufExplorerSortBy='name'
 nmap <silent> <Leader>e :BufExplorer<CR>
-
-" Rope
-nmap <silent> <Leader>g :call RopeGotoDefinition()<CR>
-nmap <silent> <Leader>i :call RopeAutoImport()<CR>
-
-" PyFlakes
-autocmd BufWritePost *.py call Pyflakes()
 
 " AutoComplPop
 let g:acp_ignorecaseOption = 1
@@ -251,10 +240,18 @@ let g:ctrlp_match_window_reversed = 0
 " }}}
 
 "
-" VIRTUALENV
+" PYTHON
 "
 " {{{
 
+autocmd FileType python setlocal colorcolumn=80
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd BufWritePost *.py call Pyflakes()
+
+" Rope hotkeys
+nmap <silent> <Leader>g :call RopeGotoDefinition()<CR>
+
+" Activate current virtual environment
 if has('python')
     python << EOF
 import os, sys
@@ -265,5 +262,14 @@ if ve_dir:
     execfile(activate_this, dict(__file__=activate_this))
 EOF
 endif
+
+" }}}
+
+"
+" SQL
+"
+" {{{
+
+autocmd FileType sql setlocal makeprg=cat\ %\\\|./manage.py\ dbshell
 
 " }}}
