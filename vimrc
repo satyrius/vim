@@ -106,8 +106,8 @@ map <C-L> <C-W>l
 syntax enable
 let python_highlight_all=1
 set t_Co=256
-set background=dark
-colorscheme railscasts
+set background=light
+colorscheme solarized
 
 " }}}
 
