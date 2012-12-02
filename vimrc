@@ -221,7 +221,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 "
 " {{{
 "
-nmap <silent> <Leader>r :make<CR>
+nmap <silent> <Leader>r :make!<CR>
 
 " Nerd tree toggle
 nmap <silent> <Leader>t :NERDTreeToggle<CR>
