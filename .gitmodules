@@ -34,9 +34,6 @@
 [submodule "bundle/fugitive"]
 	path = bundle/fugitive
 	url = git://github.com/tpope/vim-fugitive.git
-[submodule "bundle/pyflakes"]
-	path = bundle/pyflakes
-	url = git://github.com/nvie/vim-pyflakes.git
 [submodule "bundle/autocomplpop"]
 	path = bundle/autocomplpop
 	url = git://github.com/vim-scripts/AutoComplPop.git
@@ -52,3 +49,6 @@
 [submodule "bundle/coffee"]
 	path = bundle/coffee
 	url = git://github.com/kchmck/vim-coffee-script.git
+[submodule "bundle/flake8"]
+	path = bundle/flake8
+	url = git://github.com/nvie/vim-flake8.git

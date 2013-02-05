@@ -246,7 +246,7 @@ let g:ctrlp_match_window_reversed = 0
 
 autocmd FileType python setlocal colorcolumn=80
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd BufWritePost *.py call Pyflakes()
+autocmd BufWritePost *.py call Flake8()
 
 " Rope hotkeys
 nmap <silent> <Leader>g :call RopeGotoDefinition()<CR>
