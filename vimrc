@@ -228,7 +228,7 @@ nmap <silent> <Leader>t :NERDTreeToggle<CR>
 
 " Buffer Explorer
 let g:bufExplorerShowRelativePath=1
-let g:bufExplorerSortBy='name'
+let g:bufExplorerSortBy='fullpath'
 nmap <silent> <Leader>e :BufExplorer<CR>
 
 " AutoComplPop
