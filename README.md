@@ -5,6 +5,7 @@ To install just run next commands in your home directory:
     git clone git://github.com/satyrius/vim.git .vim
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
     ln -s .vim/vimrc .vimrc
+    vim +BundleInstall +qall
 
 I use very few plugins and manage them using Vundle. My favourite plugins are:
 
