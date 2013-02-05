@@ -2,19 +2,17 @@
 set nocompatible
 
 "
-" PATHOGEN
-"
-" http://www.vim.org/scripts/script.php?script_id=2332
+" VUNDLE
 "
 " {{{
-filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-filetype plugin indent on
-" }}}
 
-" Fix russian keys input
-set langmap=йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фa,ыs,вd,аf,пg,рh,оj,лk,дl,ж\\;,э',яz,чx,сc,мv,иb,тn,ьm,б\\,,ю.,ё`,ЙQ,ЦW,УE,КR,ЕT,НY,ГU,ШI,ЩO,ЗP,Х{,Ъ},ФA,ЫS,ВD,АF,ПG,РH,ОJ,ЛK,ДL,Ж:,Э\\",ЯZ,ЧX,СC,МV,ИB,ТN,ЬM,Б<,Ю>,Ё~
+filetype off
+filetype plugin indent on
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+
+" }}}
 
 " Set the <Leader> for combo commands
 let mapleader = ","
@@ -107,6 +105,7 @@ syntax enable
 let python_highlight_all=1
 set t_Co=256
 set background=light
+Bundle 'altercation/vim-colors-solarized'
 colorscheme solarized
 
 " }}}
@@ -172,8 +171,14 @@ set autoindent
 " Allow backspacing over everything
 set backspace=indent,eol,start
 
+" Specify how keyword completion should work
+set complete=.,w,b,t
+
 " All tabs will be replaced by spaces
 set expandtab
+
+" Default syntax completion
+set omnifunc=syntaxcomplete#Complete
 
 " Round indent to multiple of 'shiftwidth' for > and < commands
 set shiftround
@@ -198,44 +203,66 @@ vnoremap > >gv
 " }}}
 
 "
-" COMPLETION
-"
-" {{{
-
-" Specify how keyword completion should work
-set complete=.,w,b,t
-
-" Default syntax completion
-set omnifunc=syntaxcomplete#Complete
-
-" Completion depends on filetype
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-" }}}
-
-"
 " PLUGINS
 "
 " {{{
 "
-nmap <silent> <Leader>r :make!<CR>
 
-" Nerd tree toggle
-nmap <silent> <Leader>t :NERDTreeToggle<CR>
+" Fuzzy file, buffer, mru, tag, etc finder.
+Bundle 'ctrlp.vim'
+let g:ctrlp_match_window_reversed = 0
 
-" Buffer Explorer
+" With bufexplorer, you can quickly and easily switch between buffers
+Bundle 'bufexplorer.zip'
 let g:bufExplorerShowRelativePath=1
 let g:bufExplorerSortBy='fullpath'
 nmap <silent> <Leader>e :BufExplorer<CR>
 
-" AutoComplPop
+" A tree explorer plugin for vim.
+Bundle 'scrooloose/nerdtree'
+nmap <silent> <Leader>t :NERDTreeToggle<CR>
+
+" With this plugin, your vim comes to automatically opens popup menu for
+" completions when you enter characters or move the cursor in Insert mode.
+Bundle 'AutoComplPop'
 let g:acp_ignorecaseOption = 1
 
-" CtrlP
-let g:ctrlp_match_window_reversed = 0
+" This plugin is a front for the Perl module App::Ack. Ack can be used as a
+" replacement for 99% of the uses of grep. This plugin will allow you to run
+" ack from vim, and shows the results in a split window.
+Bundle 'mileszs/ack.vim'
+
+" The ultimate vim statusline utility.
+Bundle 'Lokaltog/vim-powerline'
+
+" Git wrapper.
+Bundle 'tpope/vim-fugitive'
+
+" You can use the scratch plugin to create a temporary scratch buffer to store
+" and edit text that will be discarded when you quit/exit vim.
+Bundle 'scratch.vim'
+
+" Support command mode in Russian keyboard layout
+Bundle 'powerman/vim-plugin-ruscmd'
+
+" SnipMate aims to be a concise vim script that implements some of
+" TextMate's snippets features in Vim.
+Bundle 'msanders/snipmate.vim'
+
+" }}}
+
+"
+" JAVASCRIPT, COFFEE, HTML, CSS, ETC.
+"
+" {{{
+
+" CoffeeScript support for vim.
+Bundle 'kchmck/vim-coffee-script'
+
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " }}}
 
@@ -246,9 +273,20 @@ let g:ctrlp_match_window_reversed = 0
 
 autocmd FileType python setlocal colorcolumn=80
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+
+" Enhanced version of the python syntax highlighting script.
+Bundle 'python.vim'
+
+" Syntax highlighting for Django templates.
+Bundle 'django.vim'
+
+" Flake8 is a wrapper around PyFlakes (static syntax checker), PEP8 (style
+" checker) and Ned's MacCabe script (complexity checker).
+Bundle 'nvie/vim-flake8'
 autocmd BufWritePost *.py call Flake8()
 
-" Rope hotkeys
+" Ropevim is a plugin for performing python refactorings in vim.
+Bundle 'timo/rope-vim'
 nmap <silent> <Leader>g :call RopeGotoDefinition()<CR>
 
 " Activate current virtual environment
@@ -270,6 +308,7 @@ endif
 "
 " {{{
 
+nmap <silent> <Leader>r :make!<CR>
 autocmd FileType sql setlocal makeprg=cat\ %\\\|./manage.py\ dbshell
 
 " }}}
