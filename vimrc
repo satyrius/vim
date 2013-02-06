@@ -220,6 +220,7 @@ nmap <silent> <Leader>e :BufExplorer<CR>
 
 " A tree explorer plugin for vim.
 Bundle 'scrooloose/nerdtree'
+let NERDTreeIgnore=['\.swp$', '\.pyc$', '\.ropeproject$', '_generated_media']
 nmap <silent> <Leader>t :NERDTreeToggle<CR>
 
 " With this plugin, your vim comes to automatically opens popup menu for
