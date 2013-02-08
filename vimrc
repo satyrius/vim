@@ -284,6 +284,7 @@ Bundle 'django.vim'
 " Flake8 is a wrapper around PyFlakes (static syntax checker), PEP8 (style
 " checker) and Ned's MacCabe script (complexity checker).
 Bundle 'nvie/vim-flake8'
+let g:flake8_ignore="E501" " ignore long lines check
 autocmd BufWritePost *.py call Flake8()
 
 " Ropevim is a plugin for performing python refactorings in vim.
