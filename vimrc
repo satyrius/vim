@@ -147,7 +147,7 @@ nmap  <Space> :set invhls<cr>:set hls?<cr>
 " {{{
 
 " Ignore certain types of files on completion
-set wildignore+=*.swp,*.pyc,.git,.ropeproject,_generated_media*
+set wildignore+=*.swp,*.pyc,.git,.ropeproject,_generated_media*,media*
 
 " Use menu to show command-line completion (in 'full' case)
 set wildmenu
@@ -275,7 +275,6 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType python setlocal colorcolumn=80
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 
-" Enhanced version of the python syntax highlighting script.
 Bundle 'python.vim'
 
 " Syntax highlighting for Django templates.
