@@ -250,6 +250,9 @@ Bundle 'powerman/vim-plugin-ruscmd'
 " TextMate's snippets features in Vim.
 Bundle 'msanders/snipmate.vim'
 
+" Vim plugin for intensely orgasmic commenting
+Bundle 'scrooloose/nerdcommenter'
+
 " }}}
 
 "
