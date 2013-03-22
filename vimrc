@@ -1,10 +1,7 @@
 " No need to be compatible with old vi
 set nocompatible
 
-"
-" VUNDLE
-"
-" {{{
+" VUNDLE {{{
 
 filetype off
 filetype plugin indent on
@@ -14,17 +11,18 @@ Bundle 'gmarik/vundle'
 
 " }}}
 
-" Set the <Leader> for combo commands
-let mapleader = ","
+" COMMANDS {{{
 
-" Common commads in upper case
+" Common commads in upper case to do want I want even if the Shift button was
+" pressed by accident.
 :command W w
 :command Q q
+:command WQ wq
+:command Wq wq
 
-"
-" BUFFERS AND FILES
-"
-" {{{
+" }}}
+
+" BUFFERS AND FILES {{{
 
 " Save file content whenere we leave current buffer or close window
 set autowriteall
@@ -46,10 +44,7 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "
 
 " }}}
 
-"
-" INTERFACE
-"
-" {{{
+" INTERFACE {{{
 
 " Operations such as yy, D, and P work with the system clipboard.
 " http://vim.wikia.com/wiki/Mac_OS_X_clipboard_sharing#Comments
@@ -96,10 +91,7 @@ map <C-L> <C-W>l
 
 " }}}
 
-"
-" THEME AND HIGHLITING
-"
-" {{{
+" THEME AND HIGHLITING {{{
 
 syntax enable
 let python_highlight_all=1
@@ -110,10 +102,7 @@ colorscheme solarized
 
 " }}}
 
-"
-" SEARCH AND REPLACE
-"
-" {{{
+" SEARCH AND REPLACE {{{
 
 " All matches in a line are substituted instead of one
 set gdefault
@@ -141,10 +130,7 @@ nmap  <Space> :set invhls<cr>:set hls?<cr>
 
 " }}}
 
-"
-" COMMAND-LINE COMPLETION
-"
-" {{{
+" COMMAND-LINE COMPLETION {{{
 
 " Ignore certain types of files on completion
 set wildignore+=*.swp,*.pyc,.git,.ropeproject,_generated_media*,media*
@@ -160,10 +146,7 @@ set wildmode=list:longest,full
 
 " }}}
 
-"
-" FORMATTING AND EDITING
-"
-" {{{
+" FORMATTING AND EDITING {{{
 
 " Use autoindention
 set autoindent
@@ -202,11 +185,10 @@ vnoremap > >gv
 
 " }}}
 
-"
-" PLUGINS
-"
-" {{{
-"
+" PLUGINS {{{
+
+" Set the <Leader>
+let mapleader = ","
 
 " Fuzzy file, buffer, mru, tag, etc finder.
 Bundle 'ctrlp.vim'
@@ -255,10 +237,7 @@ Bundle 'scrooloose/nerdcommenter'
 
 " }}}
 
-"
-" JAVASCRIPT, COFFEE, HTML, CSS, ETC.
-"
-" {{{
+" JAVASCRIPT, COFFEE, HTML, CSS, ETC. {{{
 
 " CoffeeScript support for vim.
 Bundle 'kchmck/vim-coffee-script'
@@ -270,10 +249,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " }}}
 
-"
-" PYTHON
-"
-" {{{
+" PYTHON {{{
 
 autocmd FileType python setlocal colorcolumn=80
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
@@ -300,17 +276,14 @@ import os, sys
 ve_dir = os.environ.get('VIRTUAL_ENV')
 if ve_dir:
     ve_dir in sys.path or sys.path.insert(0, ve_dir)
-    activate_this = os.path.join(os.path.join(ve_dir, 'bin'), 'activate_this.py')
-    execfile(activate_this, dict(__file__=activate_this))
+    activate = os.path.join(os.path.join(ve_dir, 'bin'), 'activate_this.py')
+    execfile(activate, dict(__file__=activate))
 EOF
 endif
 
 " }}}
 
-"
-" SQL
-"
-" {{{
+" SQL {{{
 
 nmap <silent> <Leader>r :make!<CR>
 autocmd FileType sql setlocal makeprg=cat\ %\\\|./manage.py\ dbshell
