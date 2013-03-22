@@ -97,6 +97,7 @@ syntax enable
 let python_highlight_all=1
 set t_Co=256
 set background=light
+let g:solarized_underline=0
 Bundle 'altercation/vim-colors-solarized'
 colorscheme solarized
 
