@@ -226,15 +226,15 @@ Bundle 'tpope/vim-fugitive'
 " and edit text that will be discarded when you quit/exit vim.
 Bundle 'scratch.vim'
 
-" Support command mode in Russian keyboard layout
-Bundle 'powerman/vim-plugin-ruscmd'
-
 " SnipMate aims to be a concise vim script that implements some of
 " TextMate's snippets features in Vim.
 Bundle 'msanders/snipmate.vim'
 
 " Vim plugin for intensely orgasmic commenting
 Bundle 'scrooloose/nerdcommenter'
+
+" Bind pressing russian key in normal mode to toggle layout
+Bundle 'evindor/vim-rusmode'
 
 " }}}
 
