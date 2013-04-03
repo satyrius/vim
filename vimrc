@@ -206,10 +206,9 @@ Bundle 'scrooloose/nerdtree'
 let NERDTreeIgnore=['\.swp$', '\.pyc$', '\.ropeproject$', '_generated_media']
 nmap <silent> <Leader>t :NERDTreeToggle<CR>
 
-" With this plugin, your vim comes to automatically opens popup menu for
-" completions when you enter characters or move the cursor in Insert mode.
-Bundle 'AutoComplPop'
-let g:acp_ignorecaseOption = 1
+" Supertab is a vim plugin which allows you to use <Tab> for all your insert
+" completion needs
+Bundle 'ervandew/supertab'
 
 " This plugin is a front for the Perl module App::Ack. Ack can be used as a
 " replacement for 99% of the uses of grep. This plugin will allow you to run
