@@ -255,6 +255,9 @@ autocmd FileType python setlocal colorcolumn=80
 
 Bundle 'python.vim'
 
+" Enhanced version of the python syntax highlighting script
+Bundle 'satyrius/python-syntax.vim'
+
 " Syntax highlighting for Django templates.
 Bundle 'django.vim'
 
