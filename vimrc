@@ -281,7 +281,7 @@ import os, sys
 ve_dir = os.environ.get('VIRTUAL_ENV')
 if ve_dir:
     ve_dir in sys.path or sys.path.insert(0, ve_dir)
-    activate = os.path.join(os.path.join(ve_dir, 'bin'), 'activate_this.py')
+    activate = os.path.join(ve_dir, 'bin', 'activate_this.py')
     execfile(activate, dict(__file__=activate))
 EOF
 endif
