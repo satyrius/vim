@@ -252,7 +252,6 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 " PYTHON {{{
 
 autocmd FileType python setlocal colorcolumn=80
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 
 Bundle 'python.vim'
 
@@ -265,9 +264,12 @@ Bundle 'nvie/vim-flake8'
 let g:flake8_ignore="E501" " ignore long lines check
 autocmd BufWritePost *.py call Flake8()
 
+" VIM binding to the awesome autocompletion library Jedi.
+Bundle 'davidhalter/jedi-vim'
+let g:jedi#use_tabs_not_buffers = 0
+
 " Ropevim is a plugin for performing python refactorings in vim.
 Bundle 'timo/rope-vim'
-nmap <silent> <Leader>g :call RopeGotoDefinition()<CR>
 
 " Activate current virtual environment
 if has('python')
