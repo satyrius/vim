@@ -288,6 +288,16 @@ endif
 
 " }}}
 
+" RUBY {{{
+
+" Vim/Ruby Configuration Files
+Bundle 'vim-ruby/vim-ruby'
+
+" Ruby on Rails power tools
+Bundle 'tpope/vim-rails'
+
+" }}}
+
 " SQL {{{
 
 nmap <silent> <Leader>r :make!<CR>

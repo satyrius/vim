@@ -1,4 +1,4 @@
-My VIM config I use for Python development
+My VIM config I use for Python and Ruby development
 
 First, if you want to use outstanding plugins for python development your vim should be built with +python option, follow the installation [instruction](https://gist.github.com/satyrius/1635076). And following python modules should by installed to satisfy *jedi-vim*, *ropevim* and *flake8* requirements. You should install them for python you have used to built into vim.
 
