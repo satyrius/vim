@@ -290,6 +290,8 @@ endif
 
 " RUBY {{{
 
+autocmd FileType ruby setlocal softtabstop=2 shiftwidth=2 tabstop=2
+
 " Vim/Ruby Configuration Files
 Bundle 'vim-ruby/vim-ruby'
 
