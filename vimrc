@@ -269,6 +269,7 @@ autocmd BufWritePost *.py call Flake8()
 
 " VIM binding to the awesome autocompletion library Jedi.
 Bundle 'davidhalter/jedi-vim'
+let g:jedi#goto_command = "<CR>"
 let g:jedi#use_tabs_not_buffers = 0
 
 " Ropevim is a plugin for performing python refactorings in vim.
