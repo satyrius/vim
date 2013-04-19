@@ -242,8 +242,18 @@ Bundle 'evindor/vim-rusmode'
 " CoffeeScript support for vim.
 Bundle 'kchmck/vim-coffee-script'
 
+" Better JavaScrirpt syntax support
+Bundle 'vim-scripts/JavaScript-syntax'
+
+" A vim plugin for highlighting and indenting JST/EJS syntax
+Bundle 'briancollins/vim-jst'
+
+" JS code should fit 80 columns. Make it sexy.
+autocmd FileType javascript,coffee setlocal colorcolumn=80
+
+" Custom completion for each file type
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType html,markdown,jst setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
