@@ -4,7 +4,6 @@ set nocompatible
 " VUNDLE {{{
 
 filetype off
-filetype plugin indent on
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
@@ -93,7 +92,6 @@ map <C-L> <C-W>l
 
 " THEME AND HIGHLITING {{{
 
-syntax enable
 let python_highlight_all=1
 set t_Co=256
 set background=light
@@ -320,3 +318,8 @@ nmap <silent> <Leader>r :make!<CR>
 autocmd FileType sql setlocal makeprg=cat\ %\\\|./manage.py\ dbshell
 
 " }}}
+
+" Enable plugins, indention and syntax highlighting after all pluings will be
+" installed. Otherwise it will not work.
+filetype plugin indent on
+syntax on
