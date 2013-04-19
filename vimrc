@@ -269,13 +269,14 @@ autocmd BufWritePost *.py call Flake8()
 
 " VIM binding to the awesome autocompletion library Jedi.
 Bundle 'davidhalter/jedi-vim'
-let g:jedi#goto_command = "<CR>"
+let g:jedi#auto_initialization = 0
 let g:jedi#popup_on_dot = 0
 let g:jedi#show_function_definition = 0
 let g:jedi#use_tabs_not_buffers = 0
 
 " Ropevim is a plugin for performing python refactorings in vim.
 Bundle 'timo/rope-vim'
+nmap <silent> <Leader>g :call RopeGotoDefinition()<CR>
 
 " Activate current virtual environment
 if has('python')
