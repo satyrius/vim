@@ -235,28 +235,6 @@ Bundle 'evindor/vim-rusmode'
 
 " }}}
 
-" JAVASCRIPT, COFFEE, HTML, CSS, ETC. {{{
-
-" CoffeeScript support for vim.
-Bundle 'kchmck/vim-coffee-script'
-
-" Better JavaScrirpt syntax support
-Bundle 'vim-scripts/JavaScript-syntax'
-
-" A vim plugin for highlighting and indenting JST/EJS syntax
-Bundle 'briancollins/vim-jst'
-
-" JS code should fit 80 columns. Make it sexy.
-autocmd FileType javascript,coffee setlocal colorcolumn=80
-
-" Custom completion for each file type
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown,jst setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-" }}}
-
 " PYTHON {{{
 
 autocmd FileType python setlocal colorcolumn=80
@@ -316,6 +294,36 @@ autocmd FileType ruby,eruby setlocal softtabstop=2 shiftwidth=2 tabstop=2
 
 nmap <silent> <Leader>r :make!<CR>
 autocmd FileType sql setlocal makeprg=cat\ %\\\|./manage.py\ dbshell
+
+" }}}
+
+" HTML, CSS AND TEMPLATING {{{
+
+" A vim plugin for highlighting and indenting JST/EJS syntax
+Bundle 'briancollins/vim-jst'
+
+" Jinja plugins for vim
+Bundle 'lepture/vim-jinja'
+
+autocmd FileType html,markdown,jst setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+
+" }}}
+
+" JAVASCRIPT, COFFEE {{{
+
+" CoffeeScript support for vim.
+Bundle 'kchmck/vim-coffee-script'
+
+" Better JavaScrirpt syntax support
+Bundle 'vim-scripts/JavaScript-syntax'
+
+" JS code should fit 80 columns. Make it sexy.
+autocmd FileType javascript,coffee setlocal colorcolumn=80
+
+" Custom completion for each file type
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 
 " }}}
 
