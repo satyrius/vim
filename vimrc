@@ -331,3 +331,10 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 " installed. Otherwise it will not work.
 filetype plugin indent on
 syntax on
+
+" Enables the reading of .vimrc, .exrc and .gvimrc indent the current
+" directory.  If you switch this option on you should also  consider
+" setting the 'secure' option.  Using a  local .exrc, .vimrc or .gvimrc
+" is a potential security leak, use with   care!
+set exrc
+set secure
