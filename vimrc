@@ -303,6 +303,9 @@ autocmd FileType sql setlocal makeprg=cat\ %\\\|./manage.py\ dbshell
 
 " HTML, CSS AND TEMPLATING {{{
 
+" This plugin is here to help you editing Handlebars files
+Bundle 'nono/vim-handlebars.git'
+
 " A vim plugin for highlighting and indenting JST/EJS syntax
 Bundle 'briancollins/vim-jst'
 
