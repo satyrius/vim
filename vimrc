@@ -300,6 +300,23 @@ autocmd FileType ruby,eruby setlocal softtabstop=2 shiftwidth=2 tabstop=2
 
 " }}}
 
+" JAVASCRIPT, COFFEE {{{
+
+" CoffeeScript support for vim.
+Bundle 'kchmck/vim-coffee-script'
+
+" Better JavaScrirpt syntax support
+Bundle 'vim-scripts/JavaScript-syntax'
+
+" JS code should fit 80 columns. Make it sexy.
+autocmd FileType javascript,coffee setlocal colorcolumn=80
+autocmd FileType coffee setlocal softtabstop=2 shiftwidth=2 tabstop=2
+
+" Custom completion for each file type
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+
+" }}}
+
 " SQL {{{
 
 nmap <silent> <Leader>r :make!<CR>
@@ -321,23 +338,6 @@ Bundle 'lepture/vim-jinja'
 autocmd FileType html,markdown,jst setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-
-" }}}
-
-" JAVASCRIPT, COFFEE {{{
-
-" CoffeeScript support for vim.
-Bundle 'kchmck/vim-coffee-script'
-
-" Better JavaScrirpt syntax support
-Bundle 'vim-scripts/JavaScript-syntax'
-
-" JS code should fit 80 columns. Make it sexy.
-autocmd FileType javascript,coffee setlocal colorcolumn=80
-autocmd FileType coffee setlocal softtabstop=2 shiftwidth=2 tabstop=2
-
-" Custom completion for each file type
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 
 " }}}
 
