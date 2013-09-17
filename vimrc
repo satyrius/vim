@@ -239,6 +239,12 @@ Bundle 'nginx.vim'
 
 " }}}
 
+" NGINX {{{
+
+autocmd BufNewFile,BufRead *etc/nginx* set ft=nginx
+
+" }}}
+
 " PYTHON {{{
 
 autocmd FileType python setlocal colorcolumn=80
