@@ -335,6 +335,9 @@ Bundle 'briancollins/vim-jst'
 " Jinja plugins for vim
 Bundle 'lepture/vim-jinja'
 
+" Syntax Highlighting for Stylus
+Bundle 'wavded/vim-stylus'
+
 autocmd FileType html,markdown,jst setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
