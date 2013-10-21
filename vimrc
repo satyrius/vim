@@ -188,7 +188,7 @@ vnoremap > >gv
 
 " }}}
 
-" PLUGINS {{{
+" COMMON PLUGINS {{{
 
 " Set the <Leader>
 let mapleader = ","
