@@ -257,9 +257,6 @@ Bundle 'python.vim'
 " Enhanced version of the python syntax highlighting script
 Bundle 'satyrius/python-syntax.vim'
 
-" Syntax highlighting for Django templates.
-Bundle 'django.vim'
-
 if has('python')
 
 function! HasPythonModule(name)
@@ -357,6 +354,13 @@ Bundle 'briancollins/vim-jst'
 
 " Jinja plugins for vim
 Bundle 'lepture/vim-jinja'
+" Setup proper file type if you use Jinja templates
+" autocmd BufNewFile,BufRead *.html set ft=jinja
+
+" Syntax highlighting for Django templates.
+Bundle 'django.vim'
+" Setup proper file type if you use Django templates
+" autocmd BufNewFile,BufRead *.html set ft=django
 
 " Syntax Highlighting for Stylus
 Bundle 'wavded/vim-stylus'
