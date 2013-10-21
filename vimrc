@@ -19,6 +19,9 @@ Bundle 'gmarik/vundle'
 :command! WQ wq
 :command! Wq wq
 
+" Enter command mode faster
+nnoremap ; :
+
 " }}}
 
 " BUFFERS AND FILES {{{
