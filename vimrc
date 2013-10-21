@@ -239,15 +239,6 @@ Bundle 'evindor/vim-rusmode'
 
 " }}}
 
-" NGINX {{{
-
-" Highlights configuration files for nginx
-Bundle 'nginx.vim'
-
-autocmd BufNewFile,BufRead *etc/nginx* set ft=nginx
-
-" }}}
-
 " PYTHON {{{
 
 autocmd FileType python setlocal colorcolumn=80
@@ -368,6 +359,15 @@ Bundle 'wavded/vim-stylus'
 autocmd FileType html,markdown,jst setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+
+" }}}
+
+" NGINX {{{
+
+" Highlights configuration files for nginx
+Bundle 'nginx.vim'
+
+autocmd BufNewFile,BufRead *etc/nginx* set ft=nginx
 
 " }}}
 
