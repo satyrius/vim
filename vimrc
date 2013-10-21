@@ -234,12 +234,12 @@ Bundle 'scrooloose/nerdcommenter'
 " Bind pressing russian key in normal mode to toggle layout
 Bundle 'evindor/vim-rusmode'
 
-" Highlights configuration files for nginx
-Bundle 'nginx.vim'
-
 " }}}
 
 " NGINX {{{
+
+" Highlights configuration files for nginx
+Bundle 'nginx.vim'
 
 autocmd BufNewFile,BufRead *etc/nginx* set ft=nginx
 
