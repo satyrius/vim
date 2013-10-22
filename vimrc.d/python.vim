@@ -1,4 +1,11 @@
+" PEP8 line length requrement is 79 chars
 autocmd FileType python setlocal colorcolumn=80
+
+" Python specific disables for file name completion
+set wildignore+=*.pyc,.noseids,.ropeproject
+
+" Do not show *.pyc files in the tree
+let NERDTreeIgnore+=['\.pyc$']
 
 Bundle 'python.vim'
 

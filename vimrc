@@ -135,8 +135,7 @@ nmap  <Space> :set invhls<cr>:set hls?<cr>
 " COMMAND-LINE COMPLETION {{{
 
 " Ignore certain types of files on completion
-set wildignore+=*.swp,*.pyc,.git
-set wildignore+=.noseids,.ropeproject
+set wildignore+=*.swp,.git
 
 " Use menu to show command-line completion (in 'full' case)
 set wildmenu
@@ -205,7 +204,7 @@ nmap <silent> <Leader>e :BufExplorer<CR>
 
 " A tree explorer plugin for vim.
 Bundle 'scrooloose/nerdtree'
-let NERDTreeIgnore=['\.swp$', '\.pyc$']
+let NERDTreeIgnore=['\.swp$']
 nmap <silent> <Leader>t :NERDTreeToggle<CR>
 
 " Supertab is a vim plugin which allows you to use <Tab> for all your insert
