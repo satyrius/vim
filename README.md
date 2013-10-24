@@ -4,11 +4,11 @@ I am *python* developer and the most of tweeks are for web development and at mo
 
 ## Installation
 
+    # Clone the Vim config repo to your home dir
 	cd ~
     git clone git://github.com/satyrius/vim.git .vim  # or clone your fork
-    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-    ln -s .vim/vimrc .vimrc
-    vim +BundleInstall +qall
+    # Install
+    cd .vim && make install
 
 
 ## Vundle
