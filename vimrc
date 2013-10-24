@@ -100,7 +100,7 @@ set t_Co=256
 set background=light
 let g:solarized_underline=0
 Bundle 'altercation/vim-colors-solarized'
-colorscheme solarized
+silent! colorscheme solarized
 
 " }}}
 
