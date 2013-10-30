@@ -61,6 +61,16 @@ My vim settings are smart enouth to undestand is your *Vim* satisfies all requer
 
 * [Ropevim](http://rope.sourceforge.net/ropevim.html), a very powerful refactoring (but not only) tool;
 * [Flake8](https://github.com/nvie/vim-flake8) allow to run flake8 on python files;
+
+### Go
+
+The *Go* development plugin I use is *Blackrush/vim-gocode*. It is bundled with standard `$GOROOT/misc/vim` stuff plus [gocode](https://github.com/nsf/gocode) autocompetion. It has some requirements for [Mac OS X installation](https://github.com/Blackrush/vim-gocode/wiki/Installation-on-OS-X) and of course you need *gocode* to be installed. Breafly you should do the following.
+
+	brew install coreutils
+	ln -s /usr/local/bin/greadlink /usr/local/bin/readlink
+	# Ensure your GOPATH and PATH are ok then
+	go get -u github.com/nsf/gocode
+
     
 ## local .vimrc
 
