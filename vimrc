@@ -226,10 +226,6 @@ Bundle 'tpope/vim-fugitive'
 " and edit text that will be discarded when you quit/exit vim.
 Bundle 'scratch.vim'
 
-" SnipMate aims to be a concise vim script that implements some of
-" TextMate's snippets features in Vim.
-Bundle 'msanders/snipmate.vim'
-
 " Vim plugin for intensely orgasmic commenting
 Bundle 'scrooloose/nerdcommenter'
 

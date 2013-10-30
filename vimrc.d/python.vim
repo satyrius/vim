@@ -1,6 +1,10 @@
 " PEP8 line length requrement is 79 chars
 autocmd FileType python setlocal colorcolumn=80
 
+" Abbreviations a.k.a tiny snippets
+autocmd FileType python :iabbrev <buffer> utf8 # -*- coding: utf-8 -*-
+autocmd FileType python :iabbrev <buffer> ipdb import ipdb; ipdb.set_trace()
+
 " Python specific disables for file name completion
 set wildignore+=*.pyc,.noseids,.ropeproject
 
