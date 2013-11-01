@@ -67,9 +67,6 @@ set nowrap
 " Show line numbers
 set number
 
-" Enable mouse to be able to scroll
-set mouse=a
-
 " Scroll when cursor gets within 3 characters of top/bottom edge
 set scrolloff=3
 
