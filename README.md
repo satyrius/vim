@@ -64,14 +64,16 @@ My vim settings are smart enouth to undestand is your *Vim* satisfies all requer
 
 ### Go
 
-The *Go* development plugin I use is *Blackrush/vim-gocode*. It is bundled with standard `$GOROOT/misc/vim` stuff plus [gocode](https://github.com/nsf/gocode) autocompetion. It has some requirements for [Mac OS X installation](https://github.com/Blackrush/vim-gocode/wiki/Installation-on-OS-X) and of course you need *gocode* to be installed. Breafly you should do the following.
+The *Go* development plugin I use is *Blackrush/vim-gocode*. It is bundled with standard `$GOROOT/misc/vim` stuff plus [gocode](https://github.com/nsf/gocode) autocompetion. It has some requirements for [Mac OS X installation](https://github.com/Blackrush/vim-gocode/wiki/Installation-on-OS-X) and of course you need *gocode* to be installed. For *go to definition* feature I use *dgryski/vim-godef*. Breafly you should do the following.
 
 	brew install coreutils
 	ln -s /usr/local/bin/greadlink /usr/local/bin/readlink
 	# Ensure your GOPATH and PATH are ok then
 	go get -u github.com/nsf/gocode
+	go get -v code.google.com/p/rog-go/exp/cmd/godef
+	go install -v code.google.com/p/rog-go/exp/cmd/godef
 
-    
+
 ## local .vimrc
 
 You alway want to add some tiny tweeks for each you project, but cannot add them to the main *.vimrc*, because it should not affect other projects. Fortunately *Vim* allows you to use local (a.k.a per directory) settings. You can see the following at the end of my *.vimrc*
