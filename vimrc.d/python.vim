@@ -50,7 +50,7 @@ endif
 "
 if HasPythonModule('ropevim')
     Bundle 'timo/rope-vim'
-    nmap <silent> <Leader>g :call RopeGotoDefinition()<CR>
+    autocmd FileType python nnoremap <buffer> gd :call RopeGotoDefinition()<cr>
 endif
 
 " Activate current virtual environment
