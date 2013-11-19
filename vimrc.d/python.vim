@@ -42,7 +42,8 @@ if HasPythonModule('pyflakes')
     autocmd BufWritePost *.py call Flake8()
 endif
 
-" Ropevim is a plugin for performing python refactorings in vim.
+" rope-vim is a plugin for performing python refactorings in vim.
+" rope-omni provide a ropevim omnicomplete function.
 "
 " `ropevim` python module is required:
 "
@@ -51,6 +52,10 @@ endif
 if HasPythonModule('ropevim')
     Bundle 'timo/rope-vim'
     autocmd FileType python nnoremap <buffer> gd :call RopeGotoDefinition()<cr>
+
+    Bundle 'rygwdn/rope-omni'
+    autocmd FileType python setlocal omnifunc=RopeCompleteFunc
+    autocmd FileType python call SuperTabSetDefaultCompletionType('<c-x><c-o>')
 endif
 
 " Activate current virtual environment
