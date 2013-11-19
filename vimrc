@@ -156,6 +156,9 @@ set backspace=indent,eol,start
 " Specify how keyword completion should work
 set complete=.,w,b,t
 
+" Docs preview are very annoying on completion
+set completeopt-=preview
+
 " All tabs will be replaced by spaces
 set expandtab
 
