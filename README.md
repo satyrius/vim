@@ -54,12 +54,12 @@ As I said above, I am a *Python* developer, so the most advanced settings are fo
 	
 If it does not, you should build you own *with blackjack and hookers*. ~~In fact, forget the Vim!~~ Here is [the recipe](https://gist.github.com/satyrius/1635076) how to do it under *Mac OS X*. After you get the python and vim with python, you should install a few python modules (do it for the python you use in `--with-python-config-dir`, it is usual a system wide python)
 
-    pip install ropevim
+    pip install jedi
     pip install flake8
     
-My vim settings are smart enouth to undestand is your *Vim* satisfies all requerements for each python plugin, so it checks for `has('python')` and for python modules installed. It also activates the proper virtualenv for you, it helps *ropevim* to find all you python libs. The most helpful python plugins are
+My vim settings are smart enouth to undestand is your *Vim* satisfies all requerements for each python plugin, so it checks for `has('python')` and for python modules installed. It also activates the proper virtualenv for you. The most helpful python plugins are
 
-* [Ropevim](http://rope.sourceforge.net/ropevim.html), a very powerful refactoring (but not only) tool;
+* [jedi-vim](https://github.com/davidhalter/jedi-vim) – awesome Python autocompletion;
 * [Flake8](https://github.com/nvie/vim-flake8) allow to run flake8 on python files;
 
 ### Go

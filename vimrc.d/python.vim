@@ -42,19 +42,16 @@ if HasPythonModule('pyflakes')
     autocmd BufWritePost *.py call Flake8()
 endif
 
-" rope-vim is a plugin for performing python refactorings in vim.
-" rope-omni provide a ropevim omnicomplete function.
+" jedi-vim is a is a VIM binding to the autocompletion library Jedi.
 "
-" `ropevim` python module is required:
+" `jedi` python module is required:
 "
-"     pip install ropevim
+"     pip install jedi
 "
-if HasPythonModule('ropevim')
-    Bundle 'timo/rope-vim'
-    autocmd FileType python nnoremap <buffer> gd :call RopeGotoDefinition()<cr>
-
-    Bundle 'rygwdn/rope-omni'
-    autocmd FileType python setlocal omnifunc=RopeCompleteFunc
+if HasPythonModule('jedi')
+    Bundle 'davidhalter/jedi-vim'
+    let g:jedi#use_tabs_not_buffers = 0
+    let g:jedi#popup_on_dot = 0
     autocmd FileType python call SuperTabSetDefaultCompletionType('<c-x><c-o>')
 endif
 
