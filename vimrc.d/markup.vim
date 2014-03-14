@@ -21,4 +21,4 @@ autocmd FileType html,markdown,jst setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 
-autocmd FileType html setlocal softtabstop=2 shiftwidth=2 tabstop=2
+autocmd FileType html,stylus setlocal softtabstop=2 shiftwidth=2 tabstop=2
