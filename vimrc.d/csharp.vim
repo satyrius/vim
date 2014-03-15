@@ -6,3 +6,7 @@ Bundle 'nosami/Omnisharp'
 
 autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
 autocmd FileType cs call SuperTabSetDefaultCompletionType('<c-x><c-o>')
+
+" Do not suggest and no now show in the tree some file types
+set wildignore+=*.meta
+let NERDTreeIgnore+=['\.meta$']
