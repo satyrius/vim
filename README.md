@@ -8,7 +8,7 @@ I am *python* developer and the most of tweeks are for web development and at mo
 	cd ~
     git clone git://github.com/satyrius/vim.git .vim  # or clone your fork
     # Install
-    cd .vim && make install
+    cd .vim && make
 
 
 ## Vundle
@@ -36,9 +36,9 @@ My *.vimrc* contains basic *Vim* settings which can be applied to any language. 
 
 * [Ctrl-P](http://www.vim.org/scripts/script.php?script_id=3736) is a fuzzy finder written in pure Vimscript;
 * With [Buffer Explorer](http://www.vim.org/scripts/script.php?script_id=42) you can quickly and easily switch between buffers, you will love it if you prefer work with buffers instead of tabs;
-* [NERDTree](http://www.vim.org/scripts/script.php?script_id=1658) allows you to explore your filesystem and to open files and 
-directories. It presents the filesystem to you in the form of a tree which you 
-manipulate with the keyboard and/or mouse. It also allows you to perform 
+* [NERDTree](http://www.vim.org/scripts/script.php?script_id=1658) allows you to explore your filesystem and to open files and
+directories. It presents the filesystem to you in the form of a tree which you
+manipulate with the keyboard and/or mouse. It also allows you to perform
 simple filesystem operations.
 
 
@@ -51,12 +51,12 @@ I have *vimrc.d* drectory. It contains additional vim settings files. I use it t
 As I said above, I am a *Python* developer, so the most advanced settings are for *Python* and they are in *vimrc.d/python.vim*. All major python plugins require *Vim* to be compiled with python support. Check is your *Vim* supports python
 
 	vim --version | grep +python
-	
+
 If it does not, you should build you own *with blackjack and hookers*. ~~In fact, forget the Vim!~~ Here is [the recipe](https://gist.github.com/satyrius/1635076) how to do it under *Mac OS X*. After you get the python and vim with python, you should install a few python modules (do it for the python you use in `--with-python-config-dir`, it is usual a system wide python)
 
     pip install jedi
     pip install flake8
-    
+
 My vim settings are smart enouth to undestand is your *Vim* satisfies all requerements for each python plugin, so it checks for `has('python')` and for python modules installed. It also activates the proper virtualenv for you. The most helpful python plugins are
 
 * [jedi-vim](https://github.com/davidhalter/jedi-vim) – awesome Python autocompletion;
@@ -73,6 +73,11 @@ The *Go* development plugin I use is *Blackrush/vim-gocode*. It is bundled with 
 	go get -v code.google.com/p/rog-go/exp/cmd/godef
 	go install -v code.google.com/p/rog-go/exp/cmd/godef
 
+### C\#
+
+*nosami/Omnisharp* is a plugin for Vim to provide IDE like abilities for *C#*. It has tons of features including code completion, go to definition, code formatter and many other. To make it work you should install *Mono* first, then build the plugin.
+
+	make csharp
 
 ## local .vimrc
 

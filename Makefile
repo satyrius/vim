@@ -11,7 +11,11 @@ vundle:
 
 plugins: vundle
 	vim +BundleInstall +qall
-	cd bundle/Omnisharp/server && xbuild /p:Platform="Any CPU"
+
+csharp: install
+	command -v build >/dev/null 2>&1 && cd bundle/Omnisharp/server \
+		&& xbuild /p:Platform="Any CPU" \
+		|| { echo "Cannot build Omnisharp. You should install Mono for xbuild util and try again 'make plugins'"; exit 1; }
 
 clean: vundle
 	vim +BundleClean! +qall
