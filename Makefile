@@ -11,6 +11,7 @@ vundle:
 
 plugins: vundle
 	vim +BundleInstall +qall
+	cd bundle/Omnisharp/server && xbuild /p:Platform="Any CPU"
 
 clean: vundle
 	vim +BundleClean! +qall
