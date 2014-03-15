@@ -1,22 +1,22 @@
-v.install: vundle
-	vim +BundleInstall +qall
+install: vimrc plugins
 
-v.clean: vundle
-	vim +BundleClean! +qall
+VIMRC="$(HOME)/.vimrc"
 
-v.update: vundle
-	vim +BundleUpdate +qall
-
-v.all: vundle
-	vim +BundleClean! +BundleUpdate +BundleInstall +qall
+vimrc:
+	[ -L $(VIMRC) ] && rm $(VIMRC) || true
+	ln -s $(CURDIR)/vimrc $(VIMRC)
 
 vundle:
 	[ ! -d bundle/vundle ] && git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle || true
 
-VIMRC="$(HOME)/.vimrc"
+plugins: vundle
+	vim +BundleInstall +qall
 
-install.vimrc:
-	[ -L $(VIMRC) ] && rm $(VIMRC) || true
-	ln -s $(CURDIR)/vimrc $(VIMRC)
+clean: vundle
+	vim +BundleClean! +qall
 
-install: install.vimrc v.install
+update: vundle
+	vim +BundleUpdate +qall
+
+all: vundle
+	vim +BundleClean! +BundleUpdate +BundleInstall +qall
