@@ -97,7 +97,7 @@ map <C-L> <C-W>l
 
 let python_highlight_all=1
 set t_Co=256
-set background=light
+set background=dark
 let g:solarized_underline=0
 Bundle 'altercation/vim-colors-solarized'
 silent! colorscheme solarized
