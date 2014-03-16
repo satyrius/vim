@@ -58,6 +58,9 @@ set cursorline
 " Use markers to specify folds
 set foldmethod=marker
 
+" Setup fonsize for MacVim
+set guifont=Monaco:h14
+
 " Always show status line, even for one window
 set laststatus=2
 
