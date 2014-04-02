@@ -1,6 +1,9 @@
 " This plugin is here to help you editing Handlebars files
 Bundle 'nono/vim-handlebars.git'
 
+" Vim Jade template engine syntax highlighting and indention
+Bundle 'digitaltoad/vim-jade'
+
 " A vim plugin for highlighting and indenting JST/EJS syntax
 Bundle 'briancollins/vim-jst'
 
