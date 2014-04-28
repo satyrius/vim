@@ -42,7 +42,10 @@ set hidden
 set updatecount=50
 
 " Jump to the last known position in a file just after opening it, if the '" mark is set
-autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g`\"" | endif
+augroup jump_to_the_line
+    autocmd!
+    autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g`\"" | endif
+augroup END
 
 " }}}
 
@@ -185,7 +188,10 @@ set tabstop=4
 
 " Remove trailing whitespaces before save
 " Someone says its dangerous. Nah! Screw you!
-autocmd BufWritePre * :%s/\s\+$//e
+augroup trip_lines
+    autocmd!
+    autocmd BufWritePre * :%s/\s\+$//e
+augroup END
 
 " Visual shifting (does not exit Visual mode)
 vnoremap < <gv

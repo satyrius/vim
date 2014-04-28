@@ -1,9 +1,13 @@
-" PEP8 line length requrement is 79 chars
-autocmd FileType python setlocal colorcolumn=80
+augroup my_python
+    autocmd!
 
-" Abbreviations a.k.a tiny snippets
-autocmd FileType python :iabbrev <buffer> putf # -*- coding: utf-8 -*-
-autocmd FileType python :iabbrev <buffer> ipdb import ipdb; ipdb.set_trace()
+    " PEP8 line length requrement is 79 chars
+    autocmd FileType python setlocal colorcolumn=80
+
+    " Abbreviations a.k.a tiny snippets
+    autocmd FileType python :iabbrev <buffer> putf # -*- coding: utf-8 -*-
+    autocmd FileType python :iabbrev <buffer> ipdb import ipdb; ipdb.set_trace()
+augroup END
 
 " Python specific disables for file name completion
 set wildignore+=*.pyc,.noseids,.ropeproject
@@ -39,7 +43,10 @@ endfunction
 if HasPythonModule('pyflakes')
     Bundle 'nvie/vim-flake8'
     let g:flake8_ignore="E501" " ignore long lines check
-    autocmd BufWritePost *.py call Flake8()
+    augroup my_flake8
+        autocmd!
+        autocmd BufWritePost *.py call Flake8()
+    augroup END
 endif
 
 " jedi-vim is a is a VIM binding to the autocompletion library Jedi.
@@ -53,7 +60,10 @@ if HasPythonModule('jedi')
     let g:jedi#use_tabs_not_buffers = 0
     let g:jedi#popup_on_dot = 0
     let g:jedi#goto_definitions_command = 'gd'
-    autocmd FileType python call SuperTabSetDefaultCompletionType('<c-x><c-o>')
+    augroup my_jedi
+        autocmd!
+        autocmd FileType python call SuperTabSetDefaultCompletionType('<c-x><c-o>')
+    augroup END
 endif
 
 " Activate current virtual environment
