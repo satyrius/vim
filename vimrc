@@ -249,6 +249,16 @@ endfor
 filetype plugin indent on
 syntax on
 
+" Open .vimrc to edit and source it after save
+nmap <silent> <Leader>v :e $MYVIMRC<CR>
+augroup reload_vimrc
+    autocmd!
+    " Souce my .vimrc file every time it was saved.
+    " Use *vimrc pattern because ~/.vimrc is a symlink to ~/.vim/vimrc in my
+    " case so I want a clever file detection.
+    autocmd BufWritePost *vimrc source $MYVIMRC
+augroup END
+
 " Enables the reading of .vimrc, .exrc and .gvimrc indent the current
 " directory.  If you switch this option on you should also  consider
 " setting the 'secure' option.  Using a  local .exrc, .vimrc or .gvimrc
