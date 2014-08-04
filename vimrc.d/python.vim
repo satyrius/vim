@@ -5,7 +5,7 @@ augroup my_python
     autocmd FileType python setlocal colorcolumn=80
 
     " Abbreviations a.k.a tiny snippets
-    autocmd FileType python :iabbrev <buffer> putf # -*- coding: utf-8 -*-
+    autocmd FileType python :iabbrev <buffer> putf # coding=utf-8
     autocmd FileType python :iabbrev <buffer> ipdb import ipdb; ipdb.set_trace()
 augroup END
 
