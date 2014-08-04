@@ -20,6 +20,9 @@ Bundle 'django.vim'
 " Syntax Highlighting for Stylus
 Bundle 'wavded/vim-stylus'
 
+" VIM syntax for LESS (dynamic CSS)
+Bundle 'groenewege/vim-less'
+
 augroup my_html_css
     autocmd!
     autocmd FileType html,markdown,jst setlocal omnifunc=htmlcomplete#CompleteTags
