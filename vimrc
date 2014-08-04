@@ -246,6 +246,8 @@ Bundle 'evindor/vim-rusmode'
 
 " }}}
 
+Bundle 'ekalinin/Dockerfile.vim'
+
 for f in split(glob('~/.vim/vimrc.d/*.vim'), '\n')
     execute 'source' f
 endfor
