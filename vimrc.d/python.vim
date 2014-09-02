@@ -10,7 +10,7 @@ augroup my_python
 augroup END
 
 " Python specific disables for file name completion
-set wildignore+=*.pyc,.noseids,.ropeproject
+set wildignore+=*.pyc,.noseids,.ropeproject,pyenv
 
 " Do not show *.pyc files in the tree
 let NERDTreeIgnore+=['\.pyc$']
