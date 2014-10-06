@@ -10,10 +10,10 @@ augroup my_python
 augroup END
 
 " Python specific disables for file name completion
-set wildignore+=*.pyc,.noseids,.ropeproject,pyenv
+set wildignore+=*.pyc,.noseids,.ropeproject,pyenv,__pycache__,*.egg-info
 
 " Do not show *.pyc files in the tree
-let NERDTreeIgnore+=['\.pyc$']
+let NERDTreeIgnore+=['\.pyc$', '__pycache__$[[dir]]', '\.egg-info$[[dir]]']
 
 Bundle 'python.vim'
 
