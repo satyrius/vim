@@ -1,16 +1,67 @@
 " No need to be compatible with old vi
 set nocompatible
 
-" VUNDLE {{{
-
+" VUNDLE
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
-" }}}
+" BUFFERS AND FILES
+set autowriteall
+set encoding=utf-8
+set fileencodings=utf-8,windows-1251,iso-8859-15,koi8-r
+set hidden
+set updatecount=50
 
-" COMMANDS {{{
+" INTERFACE
+set clipboard=unnamed " http://vim.wikia.com/wiki/Mac_OS_X_clipboard_sharing#Comments
+set cursorline
+set foldmethod=marker
+set guifont=Monaco:h14
+set laststatus=2
+set nowrap
+set number
+set mouse=a
+set scrolloff=3
+set showmatch
+set noshowmode
+set title
+set ttyfast
+
+" SEARCH AND REPLACE
+set gdefault
+set history=100
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set wrapscan
+
+" COMMAND-LINE COMPLETION
+set wildignore+=*.swp,.git
+set wildmenu
+set wildmode=list:longest,full
+
+" THEME AND HIGHLITING
+let python_highlight_all=1
+set t_Co=256
+set background=dark
+let g:solarized_underline=0
+Bundle 'altercation/vim-colors-solarized'
+silent! colorscheme solarized
+
+" FORMATTING AND EDITING
+set autoindent
+set backspace=indent,eol,start
+set complete=.,w,b,t
+set completeopt-=preview " Docs preview are very annoying on completion
+set expandtab
+set omnifunc=syntaxcomplete#Complete
+set shiftround
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
 
 " Common commads in upper case to do want I want even if the Shift button was
 " pressed by accident.
@@ -19,182 +70,21 @@ Bundle 'gmarik/vundle'
 :command! WQ wq
 :command! Wq wq
 
-" }}}
-
-" BUFFERS AND FILES {{{
-
-" Save file content whenere we leave current buffer or close window
-set autowriteall
-
-" Use UTF-8 as the default buffer encoding
-set encoding=utf-8
-
-" File encogings list
-set fileencodings=utf-8,windows-1251,iso-8859-15,koi8-r
-
-" Mark abandoned buffers as hidden instead of unload them
-set hidden
-
-" Write swap file to disk after every 50 characters
-set updatecount=50
-
-" Jump to the last known position in a file just after opening it, if the '" mark is set
-augroup jump_to_the_line
-    autocmd!
-    autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g`\"" | endif
-augroup END
-
-" }}}
-
-" INTERFACE {{{
-
-" Operations such as yy, D, and P work with the system clipboard.
-" http://vim.wikia.com/wiki/Mac_OS_X_clipboard_sharing#Comments
-set clipboard=unnamed
-
-" I want to see where I am
-set cursorline
-
-" Use markers to specify folds
-set foldmethod=marker
-
-" Setup fonsize for MacVim
-set guifont=Monaco:h14
-
-" Always show status line, even for one window
-set laststatus=2
-
-" Do not wrap long lines, because it is ugly
-set nowrap
-
-" Show line numbers
-set number
-
-" Enable mouse to be able to scroll
-set mouse=a
-
-" Scroll when cursor gets within 3 characters of top/bottom edge
-set scrolloff=3
-
-" When a bracket is inserted, briefly jump to a matching one
-set showmatch
-
-" Do not show mode, Powerline does it
-set noshowmode
-
-" Show buffer name in the window's title
-set title
-
-" Indicate a fast terminal connection
-set ttyfast
-
 " Switch between windows faster
 map <C-J> <C-W>j
 map <C-K> <C-W>k
 map <C-H> <C-W>h
 map <C-L> <C-W>l
 
-" }}}
-
-" THEME AND HIGHLITING {{{
-
-let python_highlight_all=1
-set t_Co=256
-set background=dark
-let g:solarized_underline=0
-Bundle 'altercation/vim-colors-solarized'
-silent! colorscheme solarized
-
-" }}}
-
-" SEARCH AND REPLACE {{{
-
-" All matches in a line are substituted instead of one
-set gdefault
-
-" Remember up to 100 'colon' commmands and search patterns
-set history=100
-
-" Highlight search results
-set hlsearch
-
-" Enable incremental search
-set incsearch
-
-" Case insensetive search
-set ignorecase
-
-" Case sensitive search if search string contains upper case characters
-set smartcase
-
-" Set the search scan to wrap lines
-set wrapscan
-
-" Turn off highlight search
-nmap  <Space> :set invhls<cr>:set hls?<cr>
-
-" }}}
-
-" COMMAND-LINE COMPLETION {{{
-
-" Ignore certain types of files on completion
-set wildignore+=*.swp,.git
-
-" Use menu to show command-line completion (in 'full' case)
-set wildmenu
-
-" Set command-line completion mode:
-"   - on first <Tab>, when more than one match, list all matches and complete
-"     the longest common  string
-"   - on second <Tab>, complete the next full match and show menu
-set wildmode=list:longest,full
-
-" }}}
-
-" FORMATTING AND EDITING {{{
-
-" Use autoindention
-set autoindent
-
-" Allow backspacing over everything
-set backspace=indent,eol,start
-
-" Specify how keyword completion should work
-set complete=.,w,b,t
-
-" Docs preview are very annoying on completion
-set completeopt-=preview
-
-" All tabs will be replaced by spaces
-set expandtab
-
-" Default syntax completion
-set omnifunc=syntaxcomplete#Complete
-
-" Round indent to multiple of 'shiftwidth' for > and < commands
-set shiftround
-
-" Use 4 spaces for (auto)indent
-set shiftwidth=4
-
-" Use 4 spaces for inserting <Tab> or using <BS>
-set softtabstop=4
-
-" Use 4 spaces for <Tab> and :retab
-set tabstop=4
-
-" Remove trailing whitespaces before save
-" Someone says its dangerous. Nah! Screw you!
-augroup trip_lines
-    autocmd!
-    autocmd BufWritePre * :%s/\s\+$//e
-augroup END
-
 " Visual shifting (does not exit Visual mode)
 vnoremap < <gv
 vnoremap > >gv
 
-" }}}
+" Open .vimrc to edit
+nmap <silent> <Leader>v :e $MYVIMRC<CR>
+
+" Toggle highlight search
+nmap <Space> :set invhls<cr>:set hls?<cr>
 
 " COMMON PLUGINS {{{
 
@@ -254,10 +144,12 @@ endfor
 filetype plugin indent on
 syntax on
 
-" Open .vimrc to edit and source it after save
-nmap <silent> <Leader>v :e $MYVIMRC<CR>
-augroup reload_vimrc
+augroup tricks
     autocmd!
+    " Jump to the last known position in a file just after opening it, if the '" mark is set
+    autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g`\"" | endif
+    " Remove trailing whitespaces before save Someone says its dangerous. Nah! Screw you!
+    autocmd BufWritePre * :%s/\s\+$//e
     " Souce my .vimrc file every time it was saved.
     " Use *vimrc pattern because ~/.vimrc is a symlink to ~/.vim/vimrc in my
     " case so I want a clever file detection.
