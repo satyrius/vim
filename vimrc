@@ -1,5 +1,5 @@
-" No need to be compatible with old vi
 set nocompatible
+let mapleader = ","
 
 " VUNDLE
 filetype off
@@ -28,6 +28,10 @@ set showmatch
 set noshowmode
 set title
 set ttyfast
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+map <C-H> <C-W>h
+map <C-L> <C-W>l
 
 " SEARCH AND REPLACE
 set gdefault
@@ -37,11 +41,28 @@ set incsearch
 set ignorecase
 set smartcase
 set wrapscan
+nmap <Space> :set invhls<cr>:set hls?<cr>
 
 " COMMAND-LINE COMPLETION
 set wildignore+=*.swp,.git
 set wildmenu
 set wildmode=list:longest,full
+
+" CODE COMPLETE
+set complete=.,w,b,t
+set completeopt-=preview " Docs preview are very annoying on completion
+set omnifunc=syntaxcomplete#Complete
+
+" FORMATTING AND EDITING
+set autoindent
+set backspace=indent,eol,start
+set expandtab
+set shiftround
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+vnoremap < <gv
+vnoremap > >gv
 
 " THEME AND HIGHLITING
 let python_highlight_all=1
@@ -51,87 +72,26 @@ let g:solarized_underline=0
 Bundle 'altercation/vim-colors-solarized'
 silent! colorscheme solarized
 
-" FORMATTING AND EDITING
-set autoindent
-set backspace=indent,eol,start
-set complete=.,w,b,t
-set completeopt-=preview " Docs preview are very annoying on completion
-set expandtab
-set omnifunc=syntaxcomplete#Complete
-set shiftround
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
+" COMMON PLUGINS
 
-" Common commads in upper case to do want I want even if the Shift button was
-" pressed by accident.
-:command! W w
-:command! Q q
-:command! WQ wq
-:command! Wq wq
-
-" Switch between windows faster
-map <C-J> <C-W>j
-map <C-K> <C-W>k
-map <C-H> <C-W>h
-map <C-L> <C-W>l
-
-" Visual shifting (does not exit Visual mode)
-vnoremap < <gv
-vnoremap > >gv
-
-" Open .vimrc to edit
-nmap <silent> <Leader>v :e $MYVIMRC<CR>
-
-" Toggle highlight search
-nmap <Space> :set invhls<cr>:set hls?<cr>
-
-" COMMON PLUGINS {{{
-
-" Set the <Leader>
-let mapleader = ","
-
-" Fuzzy file, buffer, mru, tag, etc finder.
 Bundle 'ctrlp.vim'
 let g:ctrlp_match_window_reversed = 0
 
-" With bufexplorer, you can quickly and easily switch between buffers
 Bundle 'jlanzarotta/bufexplorer'
 let g:bufExplorerShowRelativePath=1
 let g:bufExplorerSortBy='fullpath'
 nmap <silent> <Leader>e :BufExplorer<CR>
 
-" A tree explorer plugin for vim.
 Bundle 'scrooloose/nerdtree'
 let NERDTreeIgnore=['\.swp$']
 nmap <silent> <Leader>t :NERDTreeToggle<CR>
 
-" Supertab is a vim plugin which allows you to use <Tab> for all your insert
-" completion needs
 Bundle 'ervandew/supertab'
-
-" This plugin is a front for the Perl module App::Ack. Ack can be used as a
-" replacement for 99% of the uses of grep. This plugin will allow you to run
-" ack from vim, and shows the results in a split window.
 Bundle 'mileszs/ack.vim'
-
-" The ultimate vim statusline utility.
 Bundle 'Lokaltog/vim-powerline'
-
-" Git wrapper.
 Bundle 'tpope/vim-fugitive'
-
-" You can use the scratch plugin to create a temporary scratch buffer to store
-" and edit text that will be discarded when you quit/exit vim.
 Bundle 'scratch.vim'
-
-" Vim plugin for intensely orgasmic commenting
 Bundle 'scrooloose/nerdcommenter'
-
-" Bind pressing russian key in normal mode to toggle layout
-Bundle 'evindor/vim-rusmode'
-
-" }}}
 
 Bundle 'ekalinin/Dockerfile.vim'
 
@@ -144,6 +104,14 @@ endfor
 filetype plugin indent on
 syntax on
 
+" Common commads in upper case to do want I want even if the Shift button was
+" pressed by accident.
+:command! W w
+:command! Q q
+:command! WQ wq
+:command! Wq wq
+
+nmap <silent> <Leader>v :e $MYVIMRC<CR>
 augroup tricks
     autocmd!
     " Jump to the last known position in a file just after opening it, if the '" mark is set
