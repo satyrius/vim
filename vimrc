@@ -65,7 +65,6 @@ vnoremap < <gv
 vnoremap > >gv
 
 " THEME AND HIGHLITING
-let python_highlight_all=1
 set t_Co=256
 set background=dark
 let g:solarized_underline=0
