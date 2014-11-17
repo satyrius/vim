@@ -1,4 +1,3 @@
-" Highlights configuration files for nginx
 Bundle 'nginx.vim'
 
 augroup my_nginx

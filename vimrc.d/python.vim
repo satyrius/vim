@@ -1,24 +1,16 @@
+Bundle 'python.vim'
+Bundle 'satyrius/python-syntax.vim'
+
+let python_highlight_all=1
+let NERDTreeIgnore+=['\.pyc$', '__pycache__$[[dir]]', '\.egg-info$[[dir]]']
+set wildignore+=*.pyc,.noseids,.ropeproject,pyenv,__pycache__,*.egg-info
+
 augroup my_python
     autocmd!
-
-    " PEP8 line length requrement is 79 chars
     autocmd FileType python setlocal colorcolumn=80
-
-    " Abbreviations a.k.a tiny snippets
     autocmd FileType python :iabbrev <buffer> putf # coding=utf-8
     autocmd FileType python :iabbrev <buffer> ipdb import ipdb; ipdb.set_trace()
 augroup END
-
-" Python specific disables for file name completion
-set wildignore+=*.pyc,.noseids,.ropeproject,pyenv,__pycache__,*.egg-info
-
-" Do not show *.pyc files in the tree
-let NERDTreeIgnore+=['\.pyc$', '__pycache__$[[dir]]', '\.egg-info$[[dir]]']
-
-Bundle 'python.vim'
-
-" Enhanced version of the python syntax highlighting script
-Bundle 'satyrius/python-syntax.vim'
 
 if has('python')
 
