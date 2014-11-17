@@ -68,7 +68,7 @@ let g:solarized_underline=0
 
 " COMMON PLUGINS
 
-Plug 'ctrlp.vim'
+Plug 'kien/ctrlp.vim', { 'tag': '1.79' }
 let g:ctrlp_match_window_reversed = 0
 
 Plug 'jlanzarotta/bufexplorer'
