@@ -209,7 +209,7 @@ Bundle 'ctrlp.vim'
 let g:ctrlp_match_window_reversed = 0
 
 " With bufexplorer, you can quickly and easily switch between buffers
-Bundle 'bufexplorer.zip'
+Bundle 'jlanzarotta/bufexplorer'
 let g:bufExplorerShowRelativePath=1
 let g:bufExplorerSortBy='fullpath'
 nmap <silent> <Leader>e :BufExplorer<CR>
