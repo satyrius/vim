@@ -1,11 +1,7 @@
 set nocompatible
 let mapleader = ","
 
-" VUNDLE
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
+call plug#begin('~/.vim/bundle')
 
 " BUFFERS AND FILES
 set autowriteall
@@ -67,41 +63,38 @@ vnoremap > >gv
 " THEME AND HIGHLITING
 set t_Co=256
 set background=dark
+Plug 'altercation/vim-colors-solarized'
 let g:solarized_underline=0
-Bundle 'altercation/vim-colors-solarized'
-silent! colorscheme solarized
 
 " COMMON PLUGINS
 
-Bundle 'ctrlp.vim'
+Plug 'ctrlp.vim'
 let g:ctrlp_match_window_reversed = 0
 
-Bundle 'jlanzarotta/bufexplorer'
+Plug 'jlanzarotta/bufexplorer'
 let g:bufExplorerShowRelativePath=1
 let g:bufExplorerSortBy='fullpath'
 nmap <silent> <Leader>e :BufExplorer<CR>
 
-Bundle 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 let NERDTreeIgnore=['\.swp$']
 nmap <silent> <Leader>t :NERDTreeToggle<CR>
 
-Bundle 'ervandew/supertab'
-Bundle 'mileszs/ack.vim'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'tpope/vim-fugitive'
-Bundle 'scratch.vim'
-Bundle 'scrooloose/nerdcommenter'
+Plug 'ervandew/supertab'
+Plug 'mileszs/ack.vim'
+Plug 'Lokaltog/vim-powerline'
+Plug 'tpope/vim-fugitive'
+Plug 'scratch.vim'
+Plug 'scrooloose/nerdcommenter'
 
-Bundle 'ekalinin/Dockerfile.vim'
+Plug 'ekalinin/Dockerfile.vim'
 
 for f in split(glob('~/.vim/vimrc.d/*.vim'), '\n')
     execute 'source' f
 endfor
 
-" Enable plugins, indention and syntax highlighting after all pluings will be
-" installed. Otherwise it will not work.
-filetype plugin indent on
-syntax on
+call plug#end()
+silent! colorscheme solarized
 
 " Common commads in upper case to do want I want even if the Shift button was
 " pressed by accident.

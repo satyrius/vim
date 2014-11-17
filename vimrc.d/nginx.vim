@@ -1,4 +1,4 @@
-Bundle 'nginx.vim'
+Plug 'nginx.vim'
 
 augroup my_nginx
     autocmd!

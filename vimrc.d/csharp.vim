@@ -1,5 +1,5 @@
-Bundle 'tpope/vim-dispatch'
-Bundle 'nosami/Omnisharp'
+Plug 'tpope/vim-dispatch'
+Plug 'nosami/Omnisharp'
 
 set wildignore+=*.meta
 let NERDTreeIgnore+=['\.meta$']

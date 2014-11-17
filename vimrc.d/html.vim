@@ -1,10 +1,10 @@
-Bundle 'nono/vim-handlebars.git'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'briancollins/vim-jst'
-Bundle 'lepture/vim-jinja'
-Bundle 'django.vim'
-Bundle 'wavded/vim-stylus'
-Bundle 'groenewege/vim-less'
+Plug 'nono/vim-handlebars.git'
+Plug 'digitaltoad/vim-jade'
+Plug 'briancollins/vim-jst'
+Plug 'lepture/vim-jinja'
+Plug 'django.vim'
+Plug 'wavded/vim-stylus'
+Plug 'groenewege/vim-less'
 
 augroup my_html_css
     autocmd!

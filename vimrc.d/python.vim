@@ -1,5 +1,5 @@
-Bundle 'python.vim'
-Bundle 'satyrius/python-syntax.vim'
+Plug 'python.vim'
+Plug 'satyrius/python-syntax.vim'
 
 let python_highlight_all=1
 let NERDTreeIgnore+=['\.pyc$', '__pycache__$[[dir]]', '\.egg-info$[[dir]]']
@@ -33,7 +33,7 @@ endfunction
 "     pip install pyflakes
 "
 if HasPythonModule('pyflakes')
-    Bundle 'nvie/vim-flake8'
+    Plug 'nvie/vim-flake8'
     let g:flake8_ignore="E501" " ignore long lines check
     augroup my_flake8
         autocmd!
@@ -48,7 +48,7 @@ endif
 "     pip install jedi
 "
 if HasPythonModule('jedi')
-    Bundle 'davidhalter/jedi-vim'
+    Plug 'davidhalter/jedi-vim'
     let g:jedi#use_tabs_not_buffers = 0
     let g:jedi#popup_on_dot = 0
     let g:jedi#goto_definitions_command = 'gd'

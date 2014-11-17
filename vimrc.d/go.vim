@@ -1,6 +1,6 @@
-Bundle 'jnwhiteh/vim-golang'
-Bundle 'spf13/vim-gocode'
-Bundle 'dgryski/vim-godef'
+Plug 'jnwhiteh/vim-golang'
+Plug 'spf13/vim-gocode'
+Plug 'dgryski/vim-godef'
 
 let g:godef_split=0
 

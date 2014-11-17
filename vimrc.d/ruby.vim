@@ -1,5 +1,5 @@
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-rails'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
 
 augroup my_ruby
     autocmd!
