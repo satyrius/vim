@@ -1,5 +1,4 @@
-" Highlights configuration files for nginx
-Bundle 'nginx.vim'
+Plug 'nginx.vim'
 
 augroup my_nginx
     autocmd!

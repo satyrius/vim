@@ -1,5 +1,5 @@
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'vim-scripts/JavaScript-syntax'
+Plug 'kchmck/vim-coffee-script'
+Plug 'vim-scripts/JavaScript-syntax'
 
 augroup my_javascript
     autocmd!
