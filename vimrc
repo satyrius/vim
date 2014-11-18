@@ -71,21 +71,21 @@ let g:solarized_underline=0
 Plug 'kien/ctrlp.vim', { 'tag': '1.79' }
 let g:ctrlp_match_window_reversed = 0
 
-Plug 'jlanzarotta/bufexplorer'
+Plug 'jlanzarotta/bufexplorer', { 'tag': 'v7.4.6' }
 let g:bufExplorerShowRelativePath=1
 let g:bufExplorerSortBy='fullpath'
 nmap <silent> <Leader>e :BufExplorer<CR>
 
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'tag': '4.2.0' }
 let NERDTreeIgnore=['\.swp$']
 nmap <silent> <Leader>t :NERDTreeToggle<CR>
 
-Plug 'ervandew/supertab'
-Plug 'mileszs/ack.vim'
-Plug 'Lokaltog/vim-powerline'
-Plug 'tpope/vim-fugitive'
-Plug 'scratch.vim'
-Plug 'scrooloose/nerdcommenter'
+Plug 'ervandew/supertab', { 'tag': '2.1' }
+Plug 'mileszs/ack.vim', { 'tag': '1.0.8' }
+Plug 'Lokaltog/powerline', { 'tag': '1.2' }
+Plug 'tpope/vim-fugitive', { 'tag': 'v2.1' }
+Plug 'kana/vim-scratch', { 'tag': '0.1.1' }
+Plug 'scrooloose/nerdcommenter', { 'tag': '2.3.0' }
 
 Plug 'ekalinin/Dockerfile.vim'
 
