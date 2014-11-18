@@ -4,31 +4,14 @@ I am *python* developer and the most of tweeks are for web development and at mo
 
 ## Installation
 
-    # Clone the Vim config repo to your home dir
-	cd ~
-    git clone git://github.com/satyrius/vim.git .vim  # or clone your fork
-    # Install
-    cd .vim && make
+```bash
+git clone git://github.com/satyrius/vim.git ~/.vim  # or clone your fork
+cd ~/.vim && make
+```
 
+## Plug
 
-## Vundle
-
-I use [Vundle](https://github.com/gmarik/vundle) for Vim plugins management, because I found it better that other common solutions. The important thing in *Vundle* installation is to switch off filetype plugins at the begining of your *.vimrc*
-
-	filetype off
-
-Then you activate *Vundle* and start configuring your *.vimrc* as usual
-
-	set rtp+=~/.vim/bundle/vundle/
-	call vundle#rc()
-
-And let *Vundle* manage *Vundle*
-
-	Bundle 'gmarik/vundle'
-
-Switch back filetype plugins on at the end of your *.vimrc*
-
-	filetype plugin indent on
+I use [Plug](https://github.com/junegunn/vim-plug) for Vim plugins management, because I found it better that other common solutions. The most important for me is that it allow you to freeze plugin version.
 
 ## .vimrc
 
@@ -50,12 +33,16 @@ I have *vimrc.d* drectory. It contains additional vim settings files. I use it t
 
 As I said above, I am a *Python* developer, so the most advanced settings are for *Python* and they are in *vimrc.d/python.vim*. All major python plugins require *Vim* to be compiled with python support. Check is your *Vim* supports python
 
-	vim --version | grep +python
+```bash
+vim --version | grep +python
+```
 
 If it does not, you should build you own *with blackjack and hookers*. ~~In fact, forget the Vim!~~ Here is [the recipe](https://gist.github.com/satyrius/1635076) how to do it under *Mac OS X*. After you get the python and vim with python, you should install a few python modules (do it for the python you use in `--with-python-config-dir`, it is usual a system wide python)
 
-    pip install jedi
-    pip install flake8
+```bash
+pip install jedi
+pip install flake8
+```
 
 My vim settings are smart enouth to undestand is your *Vim* satisfies all requerements for each python plugin, so it checks for `has('python')` and for python modules installed. It also activates the proper virtualenv for you. The most helpful python plugins are
 
@@ -66,25 +53,31 @@ My vim settings are smart enouth to undestand is your *Vim* satisfies all requer
 
 The *Go* development plugin I use is *Blackrush/vim-gocode*. It is bundled with standard `$GOROOT/misc/vim` stuff plus [gocode](https://github.com/nsf/gocode) autocompetion. It has some requirements for [Mac OS X installation](https://github.com/Blackrush/vim-gocode/wiki/Installation-on-OS-X) and of course you need *gocode* to be installed. For *go to definition* feature I use *dgryski/vim-godef*. Breafly you should do the following.
 
-	brew install coreutils
-	ln -s /usr/local/bin/greadlink /usr/local/bin/readlink
-	# Ensure your GOPATH and PATH are ok then
-	go get -u github.com/nsf/gocode
-	go get -v code.google.com/p/rog-go/exp/cmd/godef
-	go install -v code.google.com/p/rog-go/exp/cmd/godef
+```bash
+brew install coreutils
+ln -s /usr/local/bin/greadlink /usr/local/bin/readlink
+# Ensure your GOPATH and PATH are ok then
+go get -u github.com/nsf/gocode
+go get -v code.google.com/p/rog-go/exp/cmd/godef
+go install -v code.google.com/p/rog-go/exp/cmd/godef
+```
 
-### C\#
+### C sharp
 
 *nosami/Omnisharp* is a plugin for Vim to provide IDE like abilities for *C#*. It has tons of features including code completion, go to definition, code formatter and many other. To make it work you should install *Mono* first, then build the plugin.
 
-	make csharp
+```bash
+make csharp
+```
 
 ## local .vimrc
 
 You alway want to add some tiny tweeks for each you project, but cannot add them to the main *.vimrc*, because it should not affect other projects. Fortunately *Vim* allows you to use local (a.k.a per directory) settings. You can see the following at the end of my *.vimrc*
 
-	set exrc
-	set secure
+```vim
+set exrc
+set secure
+```
 
 Now you can create *.vimrc* in your projects root, change working dir to it, and open *Vim* with *common + local* settings.
 
