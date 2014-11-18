@@ -3,7 +3,7 @@ Plug 'satyrius/python-syntax.vim'
 
 let python_highlight_all=1
 let NERDTreeIgnore+=['\.pyc$', '__pycache__$[[dir]]', '\.egg-info$[[dir]]']
-set wildignore+=*.pyc,.noseids,.ropeproject,pyenv,__pycache__,*.egg-info
+set wildignore+=*.pyc,.noseids,.ropeproject,pyenv,env,__pycache__,*.egg-info
 
 augroup my_python
     autocmd!
