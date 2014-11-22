@@ -1,5 +1,5 @@
 Plug 'python.vim'
-Plug 'satyrius/python-syntax.vim'
+Plug 'hdima/python-syntax', { 'tag': 'r3.3.5' }
 
 let python_highlight_all=1
 let NERDTreeIgnore+=['\.pyc$', '__pycache__$[[dir]]', '\.egg-info$[[dir]]']
