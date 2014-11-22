@@ -1,4 +1,4 @@
-Plug 'python.vim'
+Plug 'vim-scripts/python.vim', { 'tag': '1..13' }
 Plug 'hdima/python-syntax', { 'tag': 'r3.3.5' }
 
 let python_highlight_all=1
