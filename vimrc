@@ -70,6 +70,9 @@ let g:solarized_underline=0
 
 Plug 'kien/ctrlp.vim', { 'tag': '1.79' }
 let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_custom_ignore = {
+    \ 'dir': '\v[\/](env|pyenv|node_modules|bower_components)$',
+    \ }
 
 Plug 'jlanzarotta/bufexplorer', { 'tag': 'v7.4.6' }
 let g:bufExplorerShowRelativePath=1
