@@ -2,8 +2,7 @@ Plug 'vim-scripts/python.vim', { 'tag': '1..13' }
 Plug 'hdima/python-syntax', { 'tag': 'r3.3.5' }
 
 let python_highlight_all=1
-let NERDTreeIgnore+=['\.pyc$', '__pycache__$[[dir]]', '\.egg-info$[[dir]]']
-set wildignore+=*.pyc,.noseids,.ropeproject,pyenv,env,__pycache__,*.egg-info
+set wildignore+=*.pyc,.noseids,.ropeproject,__pycache__,*.egg-info
 
 augroup my_python
     autocmd!
