@@ -90,8 +90,6 @@ Plug 'tpope/vim-fugitive', { 'tag': 'v2.1' }
 Plug 'kana/vim-scratch', { 'tag': '0.1.1' }
 Plug 'scrooloose/nerdcommenter', { 'tag': '2.3.0' }
 
-Plug 'ekalinin/Dockerfile.vim'
-
 for f in split(glob('~/.vim/vimrc.d/*.vim'), '\n')
     execute 'source' f
 endfor
