@@ -6,7 +6,7 @@ set wildignore+=*.pyc,.noseids,.ropeproject,__pycache__,*.egg-info
 
 augroup my_python
     autocmd!
-    autocmd FileType python setlocal colorcolumn=80
+    autocmd FileType python setlocal softtabstop=4 shiftwidth=4 tabstop=4 colorcolumn=80
     autocmd FileType python :iabbrev <buffer> putf # coding=utf-8
     autocmd FileType python :iabbrev <buffer> ipdb import ipdb; ipdb.set_trace()
 augroup END
