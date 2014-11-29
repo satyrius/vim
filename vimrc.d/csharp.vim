@@ -2,7 +2,6 @@ Plug 'tpope/vim-dispatch'
 Plug 'nosami/Omnisharp'
 
 set wildignore+=*.meta
-let NERDTreeIgnore+=['\.meta$']
 
 augroup my_csharp
     autocmd!
