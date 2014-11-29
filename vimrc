@@ -80,7 +80,7 @@ let g:bufExplorerSortBy='fullpath'
 nmap <silent> <Leader>e :BufExplorer<CR>
 
 Plug 'scrooloose/nerdtree', { 'tag': '4.2.0' }
-let NERDTreeIgnore=['\.swp$']
+let NERDTreeIgnore=[]
 nmap <silent> <Leader>t :NERDTreeToggle<CR>
 
 Plug 'ervandew/supertab', { 'tag': '2.1' }
