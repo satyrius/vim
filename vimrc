@@ -8,6 +8,7 @@ set autowriteall
 set encoding=utf-8
 set fileencodings=utf-8,windows-1251,iso-8859-15,koi8-r
 set hidden
+set noswapfile
 set updatecount=50
 
 " INTERFACE
