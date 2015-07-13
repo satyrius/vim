@@ -19,6 +19,8 @@ set guifont=Monaco:h14
 set laststatus=2
 set nowrap
 set number
+set modeline
+set modelines=5
 set mouse=a
 set scrolloff=3
 set showmatch
