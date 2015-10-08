@@ -32,8 +32,7 @@ endfunction
 "     pip install pyflakes
 "
 if HasPythonModule('pyflakes')
-    Plug 'nvie/vim-flake8'
-    let g:flake8_ignore="E501" " ignore long lines check
+    Plug 'nvie/vim-flake8', { 'tag': '1.6' }
     augroup my_flake8
         autocmd!
         autocmd BufWritePost *.py call Flake8()
