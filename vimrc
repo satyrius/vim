@@ -27,10 +27,10 @@ set showmatch
 set noshowmode
 set title
 set ttyfast
-map <C-J> <C-W>j
-map <C-K> <C-W>k
-map <C-H> <C-W>h
-map <C-L> <C-W>l
+nmap <C-J> <C-W>j
+nmap <C-K> <C-W>k
+nmap <C-H> <C-W>h
+nmap <C-L> <C-W>l
 
 " SEARCH AND REPLACE
 set gdefault
