@@ -1,4 +1,4 @@
-Plug 'vim-scripts/python.vim', { 'tag': '1..13' }
+Plug 'vim-scripts/python.vim', { 'tag': '1.13' }
 Plug 'hdima/python-syntax', { 'tag': 'r3.3.5' }
 
 let python_highlight_all=1
@@ -54,6 +54,18 @@ if HasPythonModule('jedi')
         autocmd!
         autocmd FileType python call SuperTabSetDefaultCompletionType('<c-x><c-o>')
     augroup END
+
+    " Load this after jedi
+    Plug 'lambdalisue/vim-pyenv', { 'tag': 'v1.4' }
+    function! s:jedi_auto_force_py_version() abort
+        let major_version = pyenv#python#get_internal_major_version()
+        call jedi#force_py_version(major_version)
+    endfunction
+    augroup vim-pyenv-custom-augroup
+        autocmd! *
+        autocmd User vim-pyenv-activate-post   call s:jedi_auto_force_py_version()
+        autocmd User vim-pyenv-deactivate-post call s:jedi_auto_force_py_version()
+    augroup END
 endif
 
 " Activate current virtual environment
@@ -63,7 +75,8 @@ ve_dir = os.environ.get('VIRTUAL_ENV')
 if ve_dir:
     ve_dir in sys.path or sys.path.insert(0, ve_dir)
     activate = os.path.join(ve_dir, 'bin', 'activate_this.py')
-    execfile(activate, dict(__file__=activate))
+    if os.path.exists(activate):
+        execfile(activate, dict(__file__=activate))
 EOF
 
 endif
