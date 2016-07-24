@@ -14,6 +14,7 @@ set noswapfile
 set clipboard=unnamed " http://vim.wikia.com/wiki/Mac_OS_X_clipboard_sharing#Comments
 set cursorline
 set foldmethod=marker
+set diffopt+=vertical
 set guifont=Monaco:h14
 set laststatus=2
 set nowrap
