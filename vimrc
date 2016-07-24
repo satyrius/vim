@@ -71,11 +71,10 @@ let g:solarized_underline=0
 
 " COMMON PLUGINS
 
-Plug 'kien/ctrlp.vim', { 'tag': '1.79' }
-let g:ctrlp_match_window_reversed = 0
-let g:ctrlp_custom_ignore = {
-    \ 'dir': '\v[\/](env|pyenv|node_modules|bower_components)$',
-    \ }
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+let g:fzf_layout = { 'down': '~40%' }
+let g:fzf_buffers_jump = 1
+nmap <silent> <c-p> :Files<CR>
 
 Plug 'jlanzarotta/bufexplorer', { 'tag': 'v7.4.6' }
 let g:bufExplorerShowRelativePath=1
@@ -85,7 +84,6 @@ nmap <silent> <Leader>e :BufExplorer<CR>
 Plug 'scrooloose/nerdtree', { 'tag': '4.2.0' }
 let NERDTreeIgnore=[]
 nmap <silent> <Leader>t :NERDTreeToggle<CR>
-
 Plug 'ervandew/supertab', { 'tag': '2.1' }
 Plug 'mileszs/ack.vim', { 'tag': '1.0.8' }
 Plug 'Lokaltog/powerline', { 'tag': '1.2' }

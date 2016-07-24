@@ -17,7 +17,7 @@ I use [Plug](https://github.com/junegunn/vim-plug) for Vim plugins management, b
 
 My *.vimrc* contains basic *Vim* settings which can be applied to any language. All settings are grouped in a folded sections and has comments, so you can undestand why I use them. It also contain common plugin bundles. Navigation plugins are the most important, in my opinion, espetially when you work on the project, not a single script. My favorites are:
 
-* [Ctrl-P](http://www.vim.org/scripts/script.php?script_id=3736) is a fuzzy finder written in pure Vimscript;
+* [fzf](https://github.com/junegunn/fzf.vim) a bundle of fzf-based commands and mappings to use in *Vim* for awesone fuzzy finder;
 * With [Buffer Explorer](http://www.vim.org/scripts/script.php?script_id=42) you can quickly and easily switch between buffers, you will love it if you prefer work with buffers instead of tabs;
 * [NERDTree](http://www.vim.org/scripts/script.php?script_id=1658) allows you to explore your filesystem and to open files and
 directories. It presents the filesystem to you in the form of a tree which you
